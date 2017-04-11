@@ -1,7 +1,15 @@
 \documentclass[11pt, reqno]{article}    % use "amsart" instead of "article" for AMSLaTeX format
 \usepackage{my_packages}
+\usepackage{tikz_packages}
+\usepackage[american,siunitx]{circuitikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.14}
 \usepackage[explicit]{titlesec}
+
+% change the formatting for a section (which we're treating as a problem)
 \titleformat{\section}[runin]{\normalfont\bfseries}{}{0em}{#1\ \thesection}
+\crefformat{section}{problem #2#1#3}
+\Crefformat{section}{Problem #2#1#3}
 
 \title{MAE 3134: Homework 9}
 \author{Shankar Kulumani}
@@ -11,5 +19,31 @@
 {\noindent\Large \textbf{MAE 3134: Homework 9}}
 
 \noindent \textbf{Due date}: TBD, 0935 \\
-\section{Problem}
+\section{Problem}\label{prob:1}
+
+Consider the electrical system shown in~\cref{fig:prob1}:
+\begin{figure}[htbp]
+    \centering
+    \begin{scaletikzpicturetowidth}{0.5\textwidth}
+        \begin{circuitikz}[scale=\tikzscale] 
+            \def\xE{0}
+            \def\yE{2}
+            \def\xR{2}
+            \def\xL{1}
+            \def\yL{3}
+            \def\xC{4}
+            \def\Bottom{0}
+            \draw (\xE, \yE) node[american voltage source] (E) {$E$};
+            \draw (\xL, \yL) node[cute inductor] (L) {$L$};
+            \draw (\xC, \yE) node[capacitor] (C) {$C$};
+            \draw (\xR, \yE) node[american resistor] (R) {$R$};
+    \end{circuitikz}
+\end{scaletikzpicturetowidth}
+    \caption{\Cref{prob:1} Electrical System~\label{fig:prob1}}
+\end{figure}
+
+\begin{enumerate}
+    \item Find the state-space representation of~\cref{fig:prob1}.
+    \item  
+\end{enumerate}
 \end{document}  
