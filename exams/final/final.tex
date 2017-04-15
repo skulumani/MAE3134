@@ -80,28 +80,68 @@ List at least two advantages of state-space or ``modern control'' techniques as 
 \section{Problem}
 
 The transfer functions of three systems are given as follows:
-\begin{align}
+\begin{align*}
     G_1 = \frac{1}{s^2 + 0.2 s+ 1}, \qquad G_2 = \frac{2s +4}{s^2 + 0.5 s + 4}, \qquad G_3 = \frac{-2s + 4}{s^2 + 0.5 s +4}.
-\end{align}
+\end{align*}
 
 You should accomplish the following tasks:
 \begin{enumerate}
     \item \Cref{fig:bode_match} shows the Bode plots associated with these transfer functions.
         Match each plot with the appropriate transfer function by indicating on each plot the correct transfer function ( i.e. \(G_1\), \(G_2\), or \(G_3\)).
         Explain your reasoning that lead to your solution.
-    \item  
+    \item \Cref{fig:sinusoidal_match} shows the response of each system to the same sinusoidal input.
+        Match each plot with the correct transfer function by indicating on each plot the correct transfer function. 
+        Explain your reasoning for your solution.
 \end{enumerate}
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[htbp]{0.4\textwidth} 
-        \includegraphics[width=\textwidth]{figures/G3.pdf} 
-    \end{subfigure}\\
-    \begin{subfigure}[htbp]{0.4\textwidth} 
-        \includegraphics[width=\textwidth]{figures/G1.pdf} 
-    \end{subfigure} \\
-    \begin{subfigure}[htbp]{0.4\textwidth} 
-        \includegraphics[width=\textwidth]{figures/G2.pdf} 
-    \end{subfigure} 
-    \caption{Bode Plots}~\label{fig:bode_match}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \begin{subfigure}[htbp]{\textwidth} 
+            \includegraphics[width=\textwidth]{figures/G1_bode.pdf} 
+        \end{subfigure}\\
+        \begin{subfigure}[htbp]{\textwidth} 
+            \includegraphics[width=\textwidth]{figures/G2_bode.pdf} 
+        \end{subfigure} \\
+        \begin{subfigure}[htbp]{\textwidth} 
+            \includegraphics[width=\textwidth]{figures/G3_bode.pdf} 
+        \end{subfigure} 
+        \caption{Bode Plots}~\label{fig:bode_match}
+    \end{subfigure}~
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \begin{subfigure}[htbp]{\textwidth} 
+            \includegraphics[width=\textwidth]{figures/G1_sinusoidal.pdf} 
+        \end{subfigure}\\
+        \begin{subfigure}[htbp]{\textwidth} 
+            \includegraphics[width=\textwidth]{figures/G2_sinusoidal.pdf} 
+        \end{subfigure} \\
+        \begin{subfigure}[htbp]{\textwidth} 
+            \includegraphics[width=\textwidth]{figures/G3_response.pdf} 
+        \end{subfigure} 
+        \caption{Sinusoidal Response}~\label{fig:sinusoidal_match}
+    \end{subfigure}
 \end{figure}
+\clearpage
+
+\section{Problem}
+Consider the electrical circuit shown in~\cref{fig:elec_circuit}:
+\begin{enumerate}
+    \item Find the differential equations which govern the behavior of the electrical system.
+    \item Construct the state space representation of the system. 
+        Assume the desired output is the charge in the system.
+    \item Find the output response of the system assuming zero initial conditions and a step input of \(u(t) = \SI{24}{\volt}\)
+\end{enumerate}
+\begin{figure}[htbp]
+\centering
+\begin{scaletikzpicturetowidth}{0.5\textwidth}
+    \begin{tikzpicture}[scale=\tikzscale]
+        \draw (0,0) to[american voltage source,v<=\( u(t)\)] (0,2) 
+        to[inductor, l^=1<\henry>] (2,2) to[resistor, l=3<\ohm>] (2,0) 
+        to[capacitor, l^=0.5<\farad>] (0,0); 
+    \end{tikzpicture}
+\end{scaletikzpicturetowidth}
+\caption{Electrical Circuit~\label{fig:elec_circuit}}
+\end{figure}
+
 \end{document}  
