@@ -18,33 +18,6 @@
 \begin{document}
 {\noindent\Large \textbf{MAE 3134: Final Exam}}
 
-\section{Problem}\label{prob:bode_response_analysis}
-
-The frequency response of two systems are shown in~\cref{fig:prob1_bode}.
-Using the plots, circle the correct descriptions:
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth, height=0.6\textheight, keepaspectratio]{figures/prob1_bode.pdf}
-    \caption{Frequency Response~\label{fig:prob1_bode}}
-\end{figure}  
-
-\begin{enumerate}
-    \item Which of the following statements are true about the damping ratios of the two systems?
-    \begin{enumerate}
-        \item The damping coefficients are the same.
-        \item The damping coefficient of \(G_1\) is greater than the damping coefficient of \(G_2\).
-        \item The damping coefficient of \(G_2\) is greater than the damping coefficient of \(G_1\).
-        \item Not enough information to make any statements about the damping ratio.
-    \end{enumerate} 
-    \item Which of the following statements are true about the general form of \(G_1\)?
-    \begin{enumerate}
-        \item It is a first order system.
-        \item It must have two free \(s\) terms in the denominator since the phase ends at \SI{180}{\degree}.
-        \item It must have two free \(s\) terms in the numerator since the final magnitude slope is \SI{40}{\decibel} per decade.
-        \item None of the above.
-    \end{enumerate}
-\end{enumerate}
-\clearpage
 \section{Problem}\label{prob:sys_response_to_poles}
 Elon Musk, CEO of SpaceX and Tesla Motors, has a background in physics but unfortunately has never passed a Linear Dynamics course. 
 His newest space vehicle must satisfy the following second order time response specifications for a unit step input:
@@ -72,11 +45,34 @@ Elon needs your help to choose a set of poles which will satisfy the specificati
 \end{figure*}
 
 \clearpage
-\section{Problem}
+\section{Problem}\label{prob:bode_response_analysis}
 
-List at least two advantages of state-space or ``modern control'' techniques as compared to ``classical control'' approaches.
-\vspace{5cm}
+The frequency response of two systems are shown in~\cref{fig:prob1_bode}.
+Using the plots, circle the correct descriptions:
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth, height=0.6\textheight, keepaspectratio]{figures/prob1_bode.pdf}
+    \caption{Frequency Response~\label{fig:prob1_bode}}
+\end{figure}  
+
+\begin{enumerate}
+    \item Which of the following statements are true about the damping ratios of the two systems?
+    \begin{enumerate}
+        \item The damping coefficients are the same.
+        \item The damping coefficient of \(G_1\) is greater than the damping coefficient of \(G_2\).
+        \item The damping coefficient of \(G_2\) is greater than the damping coefficient of \(G_1\).
+        \item Not enough information to make any statements about the damping ratio.
+    \end{enumerate} 
+    \item Which of the following statements are true about the general form of \(G_1\)?
+    \begin{enumerate}
+        \item It is a first order system.
+        \item It must have two free \(s\) terms in the denominator since the phase ends at \SI{180}{\degree}.
+        \item It must have two free \(s\) terms in the numerator since the final magnitude slope is \SI{40}{\decibel} per decade.
+        \item None of the above.
+    \end{enumerate}
+\end{enumerate}
 \clearpage
+
 \section{Problem}
 
 The transfer functions of three systems are given as follows:
@@ -107,7 +103,7 @@ You should accomplish the following tasks:
             \includegraphics[width=\textwidth]{figures/G3_bode.pdf} 
         \end{subfigure} 
         \caption{Bode Plots}~\label{fig:bode_match}
-    \end{subfigure}~
+    \end{subfigure}~\hfill
     \begin{subfigure}{0.4\textwidth}
         \centering
         \begin{subfigure}[htbp]{\textwidth} 
@@ -124,26 +120,6 @@ You should accomplish the following tasks:
 \end{figure}
 \clearpage
 
-\section{Problem}
-Consider the electrical circuit shown in~\cref{fig:elec_circuit}:
-\begin{enumerate}
-    \item Find the differential equations which govern the behavior of the electrical system.
-    \item Construct the state space representation of the system. 
-        Assume the desired output is the charge in the system.
-    \item Find the output response of the system assuming zero initial conditions and a step input of \(u(t) = \SI{24}{\volt}\)
-\end{enumerate}
-\begin{figure}[htbp]
-\centering
-\begin{scaletikzpicturetowidth}{0.5\textwidth}
-    \begin{tikzpicture}[scale=\tikzscale]
-        \draw (0,0) to[american voltage source,v<=\( u(t)\)] (0,2) 
-        to[inductor, l^=1<\henry>] (2,2) to[resistor, l=3<\ohm>] (2,0) 
-        to[capacitor, l^=0.5<\farad>] (0,0); 
-    \end{tikzpicture}
-\end{scaletikzpicturetowidth}
-\caption{Electrical Circuit~\label{fig:elec_circuit}}
-\end{figure}
-\clearpage
 \section{Problem}
 
 A transfer function is defined as
@@ -191,4 +167,69 @@ Draw the asymptotic Bode plots for this system.
     \end{tikzpicture}
     \end{subfigure}
 \end{figure*}
+\clearpage
+\section{Problem}
+Consider the electrical circuit shown in~\cref{fig:elec_circuit}:
+\begin{enumerate}
+    \item Find the differential equations which govern the behavior of the electrical system.
+    \item Construct the state space representation of the system. 
+        Assume the desired output is the charge in the system.
+    \item Find the output response of the system assuming zero initial conditions and a step input of \(u(t) = \SI{24}{\volt}\)
+\end{enumerate}
+\begin{figure}[htbp]
+\centering
+\begin{scaletikzpicturetowidth}{0.5\textwidth}
+    \begin{tikzpicture}[scale=\tikzscale]
+        \draw (0,0) to[american voltage source,v<=\( u(t)\)] (0,2) 
+        to[inductor, l^=1<\henry>] (2,2) to[resistor, l=3<\ohm>] (2,0) 
+        to[capacitor, l^=0.5<\farad>] (0,0); 
+    \end{tikzpicture}
+\end{scaletikzpicturetowidth}
+\caption{Electrical Circuit~\label{fig:elec_circuit}}
+\end{figure}
+\clearpage
+
+\section{Problem}
+
+For the electrical system in~\cref{fig:elec_circuit_2}:
+\begin{enumerate}
+    \item Find the differential equations for the system.
+    \item Find the state space representation of the system with your state vector defined as
+        \begin{align*}
+        \vb{x} = \begin{bmatrix}q_1 & i_1 & q_2 & i_2\end{bmatrix}^T,
+        \end{align*}
+        where \(q_1, i_1\) represent the charge and current in the left loop while \(q_2, i_2\) represent the charge and current in the right loop. 
+        The output is defined as
+        \begin{align*}
+        y = \begin{bmatrix} q_1 & q_2 \end{bmatrix}^T.
+        \end{align*}
+\end{enumerate}
+\begin{figure}[htbp]
+\centering
+\begin{scaletikzpicturetowidth}{0.8\textwidth}
+    \begin{tikzpicture}[scale=\tikzscale]
+        \draw (0,0) to[american voltage source,v<=\( u(t)\)] (0,2) 
+        to[resistor, l^=$R_1$] (2,2) to[resistor, l=$R_2$] (2,0) 
+        to[capacitor, l^=$C$] (0,0); 
+        \draw (2,2) to[short] (4,2)
+        to[inductor, l=$L$] (4,0) to[short] (2,0);
+    \end{tikzpicture}
+\end{scaletikzpicturetowidth}
+\caption{Electrical Circuit~\label{fig:elec_circuit_2}}
+\end{figure}
+\clearpage
+
+\section{Problem}
+Given the state space representation is defined as
+\begin{align*}
+    \vb{\dot{x}} &= A \vb{x} + B \vb{u}, \\
+    \vb{y} &= C \vb{x} + D\vb{u},
+\end{align*}
+\textbf{DERIVE} the expression for the transfer function \(\frac{\vb{Y}(x)}{\vb{U}(s)}\).
+\vspace{13cm}
+\section{Problem}
+
+List at least two advantages of state-space or ``modern control'' techniques as compared to ``classical control'' approaches.
+\vspace{5cm}
+\clearpage
 \end{document}  
