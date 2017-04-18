@@ -73,7 +73,7 @@ Using the plots, circle the correct descriptions:
 \end{enumerate}
 \clearpage
 
-\section{Problem}
+\section{Problem}\label{prob:tf_match}
 
 The transfer functions of three systems are given as follows:
 \begin{align*}
@@ -82,44 +82,43 @@ The transfer functions of three systems are given as follows:
 
 You should accomplish the following tasks:
 \begin{enumerate}
-    \item \Cref{fig:bode_match} shows the Bode plots associated with these transfer functions.
-        Match each plot with the appropriate transfer function by indicating on each plot the correct transfer function ( i.e. \(G_1\), \(G_2\), or \(G_3\)).
-        Explain your reasoning that lead to your solution.
-    \item \Cref{fig:sinusoidal_match} shows the response of each system to the same sinusoidal input.
-        Match each plot with the correct transfer function by indicating on each plot the correct transfer function. 
-        Explain your reasoning for your solution.
+    \item Match each Bode plot shown in~\cref{fig:bode_match}  with the appropriate transfer function by indicating on each plot the correct transfer function ( i.e. \(G_1\), \(G_2\), or \(G_3\)).
+        Explain the reasoning that lead to your solution.
+    \item Match each response plot shown in~\cref{fig:sinusoidal_match} with the correct transfer function by indicating on each plot the correct transfer function. 
+        Explain the reasoning for your solution.
+        \textbf{Note:~\cref{fig:bode_match,fig:sinusoidal_match} are not in the same order.}
 \end{enumerate}
-\begin{figure}[htbp]
+\begin{figure}[h]
     \centering
-    \begin{subfigure}{0.4\textwidth}
+    \begin{subfigure}{0.38\textwidth}
         \centering
         \begin{subfigure}[htbp]{\textwidth} 
-            \includegraphics[width=\textwidth]{figures/G1_bode.pdf} 
+            \includegraphics[width=\textwidth]{figures/G3_bode.pdf} 
         \end{subfigure}\\
         \begin{subfigure}[htbp]{\textwidth} 
-            \includegraphics[width=\textwidth]{figures/G2_bode.pdf} 
+            \includegraphics[width=\textwidth]{figures/G1_bode.pdf} 
         \end{subfigure} \\
         \begin{subfigure}[htbp]{\textwidth} 
-            \includegraphics[width=\textwidth]{figures/G3_bode.pdf} 
+            \includegraphics[width=\textwidth]{figures/G2_bode.pdf} 
         \end{subfigure} 
         \caption{Bode Plots}~\label{fig:bode_match}
     \end{subfigure}~\hfill
-    \begin{subfigure}{0.4\textwidth}
+    \begin{subfigure}{0.38\textwidth}
         \centering
         \begin{subfigure}[htbp]{\textwidth} 
-            \includegraphics[width=\textwidth]{figures/G1_sinusoidal.pdf} 
+            \includegraphics[width=\textwidth]{figures/G2_sinusoidal.pdf} 
         \end{subfigure}\\
         \begin{subfigure}[htbp]{\textwidth} 
-            \includegraphics[width=\textwidth]{figures/G2_sinusoidal.pdf} 
+            \includegraphics[width=\textwidth]{figures/G1_sinusoidal.pdf} 
         \end{subfigure} \\
         \begin{subfigure}[htbp]{\textwidth} 
             \includegraphics[width=\textwidth]{figures/G3_response.pdf} 
         \end{subfigure} 
         \caption{Sinusoidal Response}~\label{fig:sinusoidal_match}
     \end{subfigure}
+    \caption{\Cref{prob:tf_match} Bode and Sinusoidal Responses}
 \end{figure}
 \clearpage
-
 \section{Problem}
 
 A transfer function is defined as
