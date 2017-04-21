@@ -1,4 +1,4 @@
-\documentclass[11pt, reqno]{article}    % use "amsart" instead of "article" for AMSLaTeX format
+\documentclass[titlepage, 11pt, reqno]{article}    % use "amsart" instead of "article" for AMSLaTeX format
 \usepackage{my_packages}
 \usepackage{tikz_packages}
 \usepackage[american,siunitx]{circuitikz}
@@ -11,13 +11,31 @@
 \crefformat{section}{problem #2#1#3}
 \Crefformat{section}{Problem #2#1#3}
 
-\title{MAE 3134: Final Exam}
-\author{Shankar Kulumani}
-\date{11 May 2017}                          % Activate to display a given date or no date
 
 \begin{document}
-{\noindent\Large \textbf{MAE 3134: Final Exam}}
+\begin{titlepage}
+    \centering
+    \vspace{1cm}
+    {\Large Spring 2017 MAE3134: Final Exam\par }
+    \vspace{3cm}
+    {11 May 2017\par}
+    \vspace{1cm}
+    \textbf{Resources allowed}: Open notes/book, calculator, ruler. 
+    No computers or mobile devices.
 
+    \vspace{1cm}
+    {Name: \underline{\hspace{5cm}} \hspace{2cm} GWID:\underline{\hspace{5cm}}\par}
+    \vspace{3cm}
+
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+        \hline
+        Prob. 1 & Prob. 2 & Prob. 3 & Prob. 4 & Prob. 5 & Prob. 6 & Prob. 7 & Prob. 8 & Total \\
+        \hline
+        & & & & & & & &\\[4ex]
+        \hline
+    \end{tabular}
+    \vfill
+\end{titlepage}
 \section{Problem}\label{prob:sys_response_to_poles}
 Elon Musk, CEO of SpaceX and Tesla Motors, has a background in physics but unfortunately has never passed a Linear Dynamics course. 
 His newest space vehicle must satisfy the following second order time response specifications for a unit step input:
