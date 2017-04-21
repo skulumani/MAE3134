@@ -53,7 +53,7 @@ Elon needs your help to choose a set of poles which will satisfy the specificati
 
 \begin{figure*}[htbp]
 \centering
-\begin{scaletikzpicturetowidth}{0.8\textwidth}
+\begin{scaletikzpicturetowidth}{\textwidth}
     \begin{tikzpicture}[scale=\tikzscale]
         \draw[help lines, color=gray!30, dashed] (-8, -5) grid (8, 5);
         \draw[->, ultra thick] (-8, 0)--(8, 0) node[right]{Real};
@@ -62,7 +62,11 @@ Elon needs your help to choose a set of poles which will satisfy the specificati
 \end{scaletikzpicturetowidth}
 \end{figure*}
 
-\clearpage
+\newpage
+\thispagestyle{plain}
+\mbox{}
+
+\newpage
 \section{Problem}\label{prob:bode_response_analysis}
 
 The frequency response of two systems are shown in~\cref{fig:prob1_bode}.
@@ -106,9 +110,10 @@ You should accomplish the following tasks:
         Explain the reasoning for your solution.
         \textbf{Note:~\cref{fig:bode_match,fig:sinusoidal_match} are not in the same order.}
 \end{enumerate}
+\clearpage
 \begin{figure}[h]
     \centering
-    \begin{subfigure}{0.38\textwidth}
+    \begin{subfigure}{0.5\textwidth}
         \centering
         \begin{subfigure}[htbp]{\textwidth} 
             \includegraphics[width=\textwidth]{figures/G3_bode.pdf} 
@@ -121,7 +126,7 @@ You should accomplish the following tasks:
         \end{subfigure} 
         \caption{Bode Plots}~\label{fig:bode_match}
     \end{subfigure}~\hfill
-    \begin{subfigure}{0.38\textwidth}
+    \begin{subfigure}{0.5\textwidth}
         \centering
         \begin{subfigure}[htbp]{\textwidth} 
             \includegraphics[width=\textwidth]{figures/G2_sinusoidal.pdf} 
@@ -153,8 +158,8 @@ Draw the asymptotic Bode plots for this system.
             xmin=1e0, xmax=1e4,
             ymin=0, ymax=10,
             grid=both,
-            grid style={line width=0.1pt, draw=gray!25},
-            major grid style={line width=0.2pt, draw=gray!75},
+            grid style={line width=0.1pt, draw=gray!65},
+            major grid style={line width=0.2pt, draw=gray!95},
             yticklabels={,,},
             xticklabels={,,},
             minor tick num=4,
@@ -172,8 +177,8 @@ Draw the asymptotic Bode plots for this system.
             xmin=1e0, xmax=1e4,
             ymin=0, ymax=10,
             grid=both,
-            grid style={line width=0.1pt, draw=gray!25},
-            major grid style={line width=0.2pt, draw=gray!75},
+            grid style={line width=0.1pt, draw=gray!65},
+            major grid style={line width=0.2pt, draw=gray!95},
             yticklabels={,,},
             xticklabels={,,},
             minor tick num=4,
@@ -184,6 +189,9 @@ Draw the asymptotic Bode plots for this system.
     \end{tikzpicture}
     \end{subfigure}
 \end{figure*}
+\clearpage
+\newpage
+\mbox{}
 \clearpage
 \section{Problem}
 Consider the electrical circuit shown in~\cref{fig:elec_circuit}:
@@ -205,7 +213,10 @@ Consider the electrical circuit shown in~\cref{fig:elec_circuit}:
 \caption{Electrical Circuit~\label{fig:elec_circuit}}
 \end{figure}
 \clearpage
-
+\newpage
+\thispagestyle{plain}
+\mbox{}
+\clearpage
 \section{Problem}
 
 For the electrical system in~\cref{fig:elec_circuit_2}:
@@ -235,7 +246,9 @@ For the electrical system in~\cref{fig:elec_circuit_2}:
 \caption{Electrical Circuit~\label{fig:elec_circuit_2}}
 \end{figure}
 \clearpage
-
+\newpage
+\mbox{}
+\clearpage
 \section{Problem}
 Given the state space representation is defined as
 \begin{align*}
