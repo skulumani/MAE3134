@@ -27,11 +27,13 @@
     {Name: \underline{\hspace{5cm}} \hspace{2cm} GWID:\underline{\hspace{5cm}}\par}
     \vspace{3cm}
 
-    \begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
         \hline
         Prob. 1 & Prob. 2 & Prob. 3 & Prob. 4 & Prob. 5 & Prob. 6 & Prob. 7 & Prob. 8 & Total \\
         \hline
-        & & & & & & & &\\[4ex]
+         & & & & & & & &\\[4ex]
+        \hline
+        10 & 5 & 20 & 20 & 20& 10 & 10 & 5 & 100 \\[4ex]
         \hline
     \end{tabular}
     \vfill
@@ -41,7 +43,7 @@ Elon Musk, CEO of SpaceX and Tesla Motors, has a background in physics but unfor
 His newest space vehicle must satisfy the following second order time response specifications for a unit step input:
 \begin{itemize}
     \item Percent Overshoot must be less than \(5 \%\),
-    \item Rise time less than \SI{1}{\second},
+    \item Peak time less than \SI{1}{\second},
     \item Settling Time less than \SI{5}{\second}.
 \end{itemize}
 Elon needs your help to choose a set of poles which will satisfy the specifications and save humanity from impending disaster.
@@ -53,7 +55,7 @@ Elon needs your help to choose a set of poles which will satisfy the specificati
 
 \begin{figure*}[htbp]
 \centering
-\begin{scaletikzpicturetowidth}{\textwidth}
+\begin{scaletikzpicturetowidth}{0.95\textwidth}
     \begin{tikzpicture}[scale=\tikzscale]
         \draw[help lines, color=gray!30, dashed] (-8, -5) grid (8, 5);
         \draw[->, ultra thick] (-8, 0)--(8, 0) node[right]{Real};
@@ -71,6 +73,7 @@ Elon needs your help to choose a set of poles which will satisfy the specificati
 
 The frequency response of two systems are shown in~\cref{fig:prob1_bode}.
 Using the plots, circle the correct descriptions:
+\the\textwidth
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth, height=0.6\textheight, keepaspectratio]{figures/prob1_bode.pdf}
@@ -107,13 +110,14 @@ You should accomplish the following tasks:
     \item Match each Bode plot shown in~\cref{fig:bode_match}  with the appropriate transfer function by indicating on each plot the correct transfer function ( i.e. \(G_1\), \(G_2\), or \(G_3\)).
         Explain the reasoning that lead to your solution.
     \item Match each response plot shown in~\cref{fig:sinusoidal_match} with the correct transfer function by indicating on each plot the correct transfer function. 
+        The same input of \(u = 2 \sin 2t \) is applied to each system.
         Explain the reasoning for your solution.
         \textbf{Note:~\cref{fig:bode_match,fig:sinusoidal_match} are not in the same order.}
 \end{enumerate}
 \clearpage
 \begin{figure}[h]
     \centering
-    \begin{subfigure}{0.5\textwidth}
+    \begin{subfigure}{0.49\textwidth}
         \centering
         \begin{subfigure}[htbp]{\textwidth} 
             \includegraphics[width=\textwidth]{figures/G3_bode.pdf} 
@@ -125,8 +129,8 @@ You should accomplish the following tasks:
             \includegraphics[width=\textwidth]{figures/G2_bode.pdf} 
         \end{subfigure} 
         \caption{Bode Plots}~\label{fig:bode_match}
-    \end{subfigure}~\hfill
-    \begin{subfigure}{0.5\textwidth}
+    \end{subfigure}~
+    \begin{subfigure}{0.49\textwidth}
         \centering
         \begin{subfigure}[htbp]{\textwidth} 
             \includegraphics[width=\textwidth]{figures/G2_sinusoidal.pdf} 
@@ -148,8 +152,10 @@ A transfer function is defined as
 \begin{align*}
     G(s) = \frac{500 (s + 40)}{s^2 + 8s + 25}.
 \end{align*}
-Draw the asymptotic Bode plots for this system.
-
+\begin{enumerate}
+    \item Draw the asymptotic Bode plots for this system.
+    \item What is the steady state output for an input of \( u = 5 \sin 25 t\)?
+\end{enumerate}
 \begin{figure*}[htbp] 
     \centering 
     \begin{subfigure}[htbp]{\textwidth} 
@@ -194,28 +200,17 @@ Draw the asymptotic Bode plots for this system.
 \mbox{}
 \clearpage
 \section{Problem}
-Consider the electrical circuit shown in~\cref{fig:elec_circuit}:
-\begin{enumerate}
-    \item Find the differential equations which govern the behavior of the electrical system.
-    \item Construct the state space representation of the system. 
-        Assume the desired output is the charge in the system.
-    \item Find the output response of the system assuming zero initial conditions and a step input of \(u(t) = \SI{24}{\volt}\)
-\end{enumerate}
-\begin{figure}[htbp]
-\centering
-\begin{scaletikzpicturetowidth}{0.5\textwidth}
-    \begin{tikzpicture}[scale=\tikzscale]
-        \draw (0,0) to[american voltage source,v<=\( u(t)\)] (0,2) 
-        to[inductor, l^=1<\henry>] (2,2) to[resistor, l=3<\ohm>] (2,0) 
-        to[capacitor, l^=0.5<\farad>] (0,0); 
-    \end{tikzpicture}
-\end{scaletikzpicturetowidth}
-\caption{Electrical Circuit~\label{fig:elec_circuit}}
-\end{figure}
-\clearpage
-\newpage
-\thispagestyle{plain}
-\mbox{}
+Given the state space representation is defined as
+\begin{align*}
+    \vb{\dot{x}} &= A \vb{x} + B \vb{u}, \\
+    \vb{y} &= C \vb{x} + D\vb{u},
+\end{align*}
+\textbf{DERIVE} the expression for the transfer function \(\frac{\vb{Y}(x)}{\vb{U}(s)}\).
+\vspace{13cm}
+\section{Problem}
+
+List at least two advantages of state-space or ``modern control'' techniques as compared to ``classical control'' approaches.
+\vspace{5cm}
 \clearpage
 \section{Problem}
 
@@ -250,16 +245,27 @@ For the electrical system in~\cref{fig:elec_circuit_2}:
 \mbox{}
 \clearpage
 \section{Problem}
-Given the state space representation is defined as
-\begin{align*}
-    \vb{\dot{x}} &= A \vb{x} + B \vb{u}, \\
-    \vb{y} &= C \vb{x} + D\vb{u},
-\end{align*}
-\textbf{DERIVE} the expression for the transfer function \(\frac{\vb{Y}(x)}{\vb{U}(s)}\).
-\vspace{13cm}
-\section{Problem}
-
-List at least two advantages of state-space or ``modern control'' techniques as compared to ``classical control'' approaches.
-\vspace{5cm}
+Consider the electrical circuit shown in~\cref{fig:elec_circuit}:
+\begin{enumerate}
+    \item Find the differential equations which govern the behavior of the electrical system.
+    \item Construct the state space representation of the system. 
+        Assume the desired output is the charge in the system.
+    \item Find the output response of the system assuming zero initial conditions and a step input of \(u(t) = \SI{24}{\volt}\)
+\end{enumerate}
+\begin{figure}[htbp]
+\centering
+\begin{scaletikzpicturetowidth}{0.5\textwidth}
+    \begin{tikzpicture}[scale=\tikzscale]
+        \draw (0,0) to[american voltage source,v<=\( u(t)\)] (0,2) 
+        to[inductor, l^=1<\henry>] (2,2) to[resistor, l=3<\ohm>] (2,0) 
+        to[capacitor, l^=0.5<\farad>] (0,0); 
+    \end{tikzpicture}
+\end{scaletikzpicturetowidth}
+\caption{Electrical Circuit~\label{fig:elec_circuit}}
+\end{figure}
+\clearpage
+\newpage
+\thispagestyle{plain}
+\mbox{}
 \clearpage
 \end{document}  
