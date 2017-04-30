@@ -70,13 +70,12 @@ Elon needs your help to choose a set of poles which will satisfy the specificati
 
 \newpage
 \section{Problem}\label{prob:bode_response_analysis}
-
 The frequency response of two systems are shown in~\cref{fig:prob1_bode}.
 Using the plots, circle the correct descriptions:
-\the\textwidth
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth, height=0.6\textheight, keepaspectratio]{figures/prob1_bode.pdf}
+    % \includegraphics[width=\textwidth, height=0.6\textheight, keepaspectratio]{figures/prob1_bode.pdf}
+    \input{pgf/prob1_bode.pgf}
     \caption{Frequency Response~\label{fig:prob1_bode}}
 \end{figure}  
 
@@ -117,29 +116,35 @@ You should accomplish the following tasks:
 \clearpage
 \begin{figure}[h]
     \centering
-    \begin{subfigure}{0.49\textwidth}
+    \begin{subfigure}{0.45\textwidth}
         \centering
         \begin{subfigure}[htbp]{\textwidth} 
-            \includegraphics[width=\textwidth]{figures/G3_bode.pdf} 
+            % \includegraphics[width=\textwidth]{figures/G3_bode.pdf} 
+            \input{pgf/G3.pgf}
         \end{subfigure}\\
         \begin{subfigure}[htbp]{\textwidth} 
-            \includegraphics[width=\textwidth]{figures/G1_bode.pdf} 
+            % \includegraphics[width=\textwidth]{figures/G1_bode.pdf} 
+            \input{pgf/G1.pgf}
         \end{subfigure} \\
         \begin{subfigure}[htbp]{\textwidth} 
-            \includegraphics[width=\textwidth]{figures/G2_bode.pdf} 
+            % \includegraphics[width=\textwidth]{figures/G2_bode.pdf} 
+            \input{pgf/G2.pgf}
         \end{subfigure} 
         \caption{Bode Plots}~\label{fig:bode_match}
-    \end{subfigure}~
-    \begin{subfigure}{0.49\textwidth}
+    \end{subfigure}\quad
+    \begin{subfigure}{0.45\textwidth}
         \centering
         \begin{subfigure}[htbp]{\textwidth} 
-            \includegraphics[width=\textwidth]{figures/G2_sinusoidal.pdf} 
+            % \includegraphics[width=\textwidth]{figures/G2_sinusoidal.pdf} 
+            \input{pgf/G2_sinusoidal.pgf}
         \end{subfigure}\\
         \begin{subfigure}[htbp]{\textwidth} 
-            \includegraphics[width=\textwidth]{figures/G1_sinusoidal.pdf} 
+            % \includegraphics[width=\textwidth]{figures/G1_sinusoidal.pdf} 
+            \input{pgf/G1_sinusoidal.pgf}
         \end{subfigure} \\
         \begin{subfigure}[htbp]{\textwidth} 
-            \includegraphics[width=\textwidth]{figures/G3_response.pdf} 
+            % \includegraphics[width=\textwidth]{figures/G3_response.pdf} 
+            \input{pgf/G3_response.pgf}
         \end{subfigure} 
         \caption{Sinusoidal Response}~\label{fig:sinusoidal_match}
     \end{subfigure}
