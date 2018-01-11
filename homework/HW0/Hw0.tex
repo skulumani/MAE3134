@@ -93,6 +93,97 @@
     \end{subprob}
 \end{prob}
 
+\clearpage\newpage
+\begin{prob}
+    The motion of a particle is described by :
+    \begin{align*}
+        y = 0.7 \cos \parenth{\frac{\pi}{3}t + \frac{\pi}{6}}
+    \end{align*}
+    where \( y \) represents the position of the particle in meters and \( t \) is in seconds.
+    
+    \begin{subprob}
+    \item What is the value of the initial displacment?
+    \item What is the value of the initial velocity?
+    \item What is the initial acceleration?
+    \item What is the maximum velocity?
+    \item What is the value of \( t \) when \( y \) reaches the first maximum (the first positive peak)?
+    \item Using the programming language of your choice (i.e. Matlab, Python etc), generate a plot of the motion for \( t \in [0, 20] \si{\second}\).
+    \end{subprob}
+\end{prob}
 
+\clearpage\newpage
+
+\begin{prob}
+    A block with mass \SI{500}{\gram} oscillates at the end of a linear spring with a spring constant of \SI{7.5}{\newton\per\meter}.
+    You can assume this is a top-down view and the block is sliding on a frictionless surface, i.e. gravity is not a factor in this problem.
+
+
+    \begin{figure}[h]
+        \centering
+        \begin{scaletikzpicturetowidth}{0.5\textwidth}
+            \begin{tikzpicture}[scale=\tikzscale]
+                \coordinate[] (origin) at (0, 0);
+                \coordinate[] (mass) at (1, 0);
+                
+                \node[block,minimum width=2cm, minimum height=2cm] (m) at (mass) {$m$};
+                \node[ground, rotate=-90, minimum width=2cm] (wall)  at (origin) {};
+
+                \draw (wall.north east) -- (wall.north west);
+                
+                % create nodes for the spring to attach to 
+                \node [virtual, left=of m.180] (sr) {};
+                \node [virtual, right=of wall.0] (sl) {};
+
+                \draw[spring] (origin.east) -- (m.west);
+        \end{tikzpicture}
+        \end{scaletikzpicturetowidth}
+        \caption{Mechanical System~\label{fig:mechanical_system}}
+    \end{figure}
+
+    \begin{subprob}
+    \item What is the period of the block's motion in seconds?
+    \item If the block's maximum acceleration is \SI{3.0}{\meter\per\second\squared}, what is the amplitude of the motion in \si{\meter}?
+    \end{subprob}
+\end{prob}
+
+\clearpage\newpage
+
+\begin{prob}
+    A linear system's time response is given by
+    \begin{align*}
+        x(t) = 0.1 e^{-5t} .
+    \end{align*}
+
+    By hand, draw an accurate approximation for the plot of \( x(t) \) versus \( t \).
+    Label your axes.
+\end{prob}
+
+\clearpage\newpage
+
+\begin{prob}
+    Given the following matrices:
+        \begin{align*}
+            A = \begin{bmatrix} 0 & 1 \\ -10 & 2\end{bmatrix} \qquad 
+            \bracket{sI-A} = \begin{bmatrix} s & -1 \\ 10 & s- 2 \end{bmatrix}
+        \end{align*}
+
+    Determine the following.
+    \begin{subprob}
+    \item Find the eigenvalues of \( A\).
+    \item Find the inverse of \( sI -A \) analytically, and validate your answer.
+    \end{subprob}
+\end{prob}
+
+\clearpage\newpage
+
+\begin{prob}
+    Given the complex numbers \( a = -2 + 0.5 j \) and \( \lambda = -1 + 3 j\).
+
+    \begin{subprob}
+    \item What are the complex conjugates of \( a, \lambda\), i.e \( a^*, \lambda^*\)?
+    \item Express \( a, a^*\) in polar form.
+        Recall: the polar form of a complex number \( a \) is \( \norm{a} e^{j \phi} \) where \( \phi\) is the angle of \( a \) expressed in radians.
+    \end{subprob}
+\end{prob}
 \end{document}
 
