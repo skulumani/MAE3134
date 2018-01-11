@@ -42,49 +42,24 @@
         \centering
         \begin{scaletikzpicturetowidth}{1\textwidth}
             \begin{tikzpicture}[scale=\tikzscale]
-        % Define all coordinates. Not strictly necessary, but it
-        % makes for cleaner code, in my humble opinion.
-        \coordinate[label=below:$+$]   (INP) at (0,0);
-        \coordinate[label=$A_1$]       (A1)  at (1,0);
-        \coordinate[label=$B_1$]       (B1)  at (2,0);
-        \coordinate                    (C1)  at (1,-1);
-        \coordinate                    (CE1) at (2,-1);
-        \coordinate[label=above:$-$]   (INN) at (0,-1);
-        \coordinate[label=$D_1$]       (D1)  at (3,0);
-        \coordinate                    (L1)  at (3,-1);
+                % Define all coordinates. Not strictly necessary, but it
+                % makes for cleaner code, in my humble opinion.
+                \coordinate[]   (bottom_left) at (0,0);
+                \coordinate[]   (top_left) at (0,1);
+                \coordinate[]   (A1) at (1,1);
+                \coordinate[]   (B1) at (1,0);
+                \coordinate[label=below:$+$] (OUTP) at (2, 1);
+                \coordinate[label=above:$-$] (OUTN) at (2, 0);
 
-        % Draw part of the circuit. You might need more than one
-        % draw command, depending on how you do things.
-        \draw 
-            (INP) to[short,o-*,i_=$i_{ul}$]                (A1)
-                to[R,l_=$R_1$,-*,i^>=$i_2$]              (B1)
-                to[C,l_=$C_{E1}$,-*,i^>=$i_{e1}$]        (CE1)
-                --                                       (C1)
-                to[C,l_=$C_1$,*-*,i<^=$i_1$]             (A1)
-            (INN) to[short,o-]                             (C1)
-            (B1)  to[I,i_<=$gi_1$,color=orange]            (D1)
-                to[L,l_=$L_1$,color=magenta,i=$i_4$,*-*] (L1)
-                --                                       (CE1)
-        ;
+                % now do the drawing
+                \draw
+                    (top_left) to[american voltage source, l_=\( v_{in} (t) \), *-*] (bottom_left)
+                    ;
 
-        % Some additional labelling...
-        \node at (0,-0.5) {$u_{ul}$};
+                \draw (top_left) to[resistor, l=40<\kilo\ohm>, *-*] (A1)
+                    to[short, *-*] (OUTP);
 
-        % Helper lines
-        % Remove the 'dashed' parameter for a normal line.
-        % This part uses the 'calc' library from TikZ for
-        % coordinate calculations.
-        % NOTE: The corner radius has to be adjusted manually
-        %       if you adjust the base x and y lengths in the
-        %       optional argument for the tikzpicture/circuitikz
-        %       environment.
-        \draw[red,dashed,rounded corners=0.2cm,-latex]
-            ($(INP) + ( 0.175,-0.5  )$) 
-            -- ($(INP) + ( 0.175,-0.175)$) 
-            -- ($(B1)  - ( 0.175, 0.175)$)
-            -- ($(CE1) + (-0.175, 0.175)$) 
-            -- ($(INN) + ( 0.175, 0.175)$)
-        ;
+
     \end{tikzpicture}
     \end{scaletikzpicturetowidth}
         \caption{Electrical System ~\label{fig:electrical_system}}
