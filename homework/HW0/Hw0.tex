@@ -40,7 +40,7 @@
     
     \begin{figure}[h]
         \centering
-        \begin{scaletikzpicturetowidth}{1\textwidth}
+        \begin{scaletikzpicturetowidth}{0.75\textwidth}
             \begin{tikzpicture}[scale=\tikzscale]
                 % Define all coordinates. Not strictly necessary, but it
                 % makes for cleaner code, in my humble opinion.
@@ -59,42 +59,40 @@
                 \draw (top_left) to[resistor, l=40<\kilo\ohm>, *-*] (A1)
                     to[short, *-*] (OUTP);
 
+                \draw (bottom_left) to[short, *-*] (B1);
 
+                \draw (A1) to[capacitor, l_=5<\micro\farad>] (B1);
+
+                \draw (B1) to[short, *-*] (OUTN);
+
+                \node at ($0.5*(OUTP) + 0.5*(OUTN)$) {$v_{out}(t)$};
     \end{tikzpicture}
     \end{scaletikzpicturetowidth}
         \caption{Electrical System ~\label{fig:electrical_system}}
     \end{figure}
-
-    The magnitude of a vector is defined as 
+    
+    The differential equation relating \( v_{out}(t) \) to \( v_{in}(t) \) for this circuit is given by:
     \begin{align*}
-        \norm{\vec a} = \sqrt{a_1^2 + a_2^2 + a_3^2} ,
-    \end{align*}
-    for the vector 
-    \begin{align*}
-        \vec a = \begin{bmatrix} a_1 & a_2 & a_3 . \end{bmatrix}
+        \diff{v_{out}}{t} + 5 v_{out} = 5 v_{in}(t).
     \end{align*}
 
     \begin{subprob}
-        \item Find the magnitude of \( \norm{\vec a} \) where \( \vec{a} = \begin{bmatrix} \sqrt{5} & \sqrt{3} & 1 \end{bmatrix} \).
-        \item Find the magnitude of \( \norm{\vec b} \) where \( \vec{b} = \begin{bmatrix} -2 & 4 & -4 \end{bmatrix} \). 
-        \item Find the magnitude of \( \norm{\vec c} \) where \( \vec{c} = \begin{bmatrix} 0 & 0 & -9\end{bmatrix} \). 
+    \item If \( v_{in}(t) = \SI{2}{\volt} \) and \( v_{out}(0) = \SI{0}{\volt} \), find \( v_{out}(t) \) using either the method of undetermined coefficients of the Laplace transform (show your work).
+        \vspace*{6cm} \\
+
+    If \( v_{out}(t) = 2 \parenth{ 1 -e^{-5 t} }\) :
+
+    \item What is the steady-state value ( value at \( t \to \infty\)) of \( v_{out}\)?
+
+        \vspace*{2cm}
+    \item When does \( v_{out} \) reach \SI{10}{\percent} of its steady-state value?
+        \vspace*{2cm}
+    \item When does \( v_{out} \) reach \SI{90}{\percent} of its steady-state value?
+        \vspace*{2cm}
+    \item When does \( v_{out} \) reach \SI{98}{\percent} of its steady-state value?
     \end{subprob}
 \end{prob}
 
-\begin{prob}
-    Consider two vectors defined as
-    \begin{align*}
-    \vec a &= \begin{bmatrix} 0 & 3000 & 0 \end{bmatrix} , \\
-        \vec b &= \begin{bmatrix} 4000 & 0 & 0 \end{bmatrix}.
-    \end{align*}
-
-    \begin{subprob}
-    \item Find \( \vec c = \vec a + \vec b \).
-    \item Find \( \norm{\vec c} \).
-    \item Find \( \norm{\vec a} + \norm{\vec b} \).
-    \item True or False. \( \norm{\vec a} + \norm{\vec b} > \norm{\vec c} \).
-    \end{subprob}
-\end{prob}
 
 \end{document}
 
