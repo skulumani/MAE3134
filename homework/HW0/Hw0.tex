@@ -37,6 +37,39 @@
 \noindent{Due date: TBD}%\\%\vspace*{0.5cm}
 
 \begin{prob}
+    Consider the general n-th order ordinary differential equation
+    \begin{align*}
+        F(t, y(t), y'(t), \ldots, y^{(n)}(t)) = 0.
+    \end{align*}
+
+    \begin{subprob}
+        \item What general form must \( F \) have for the equation to be linear?
+
+        Classify the following equations as linear or non-linear, state their order, and identify the dependent and independent variables as well as any non-linear terms:
+    \item \( t \ddiff{y}{t} + t^2 \diff{y}{t} + t^3 y = \cos t \)
+    \item \( t \dddiff{y}{t} + t^2 \diff{y}{t} + t^3 y = \cos y \)
+    \item \( \diff{y}{x} = \frac{2 y - 3}{2 x + 2} \) 
+    \item \( \parenth{\cos t} \ddiff{y}{t} + \parenth{\sin 2 t} y = 0 \quad y = y(t)\)
+
+        Classify the following equations as \textbf{ordinary} or \textbf{partial} differential equations, also indicate the dependent and independent variables:
+
+    \item \( \diff{x}{t} + \diff{y}{t} + x + y = 0 \quad x=x(t) \quad y = y(t)\)
+    \item \( \diff{f}{x} + \diff{f}{y} + x + y = 0 \quad f = f(x, y)\)
+    \item \( \diff{}{t} \bracket{\diff{f}{x}} = 0 \quad f = x^2 + \diff{x}{t}\)
+    \item \( \diff{f}{x} = x \quad f = y^2(x)  + \diff{y}{x}\)
+
+        Classify the following linear differential equations as either \textbf{time-invariant} or \textbf{time-variable}. Indicate any time-variable terms.
+    \item \( \ddiff{y}{t} + 2 y = 0\)
+    \item \( \diff{t^2 y}{t} = 0 \)
+    \item \( \parenth{\frac{1}{t+1}}\ddiff{y}{t} + \parenth{\frac{1}{t+1}} y = 0 \)
+    \item \( \ddiff{y}{t} + \parenth{\cos{t}} y = 0 \)
+    \end{subprob}
+
+\end{prob}
+
+\clearpage\newpage
+
+\begin{prob}
     
     \begin{figure}[h]
         \centering
@@ -77,7 +110,7 @@
     \end{align*}
 
     \begin{subprob}
-    \item If \( v_{in}(t) = \SI{2}{\volt} \) and \( v_{out}(0) = \SI{0}{\volt} \), find \( v_{out}(t) \) using either the method of undetermined coefficients of the Laplace transform (show your work).
+    \item If \( v_{in}(t) = \SI{2}{\volt} \) and \( v_{out}(0) = \SI{0}{\volt} \), find \( v_{out}(t) \) using either the method of undetermined coefficients or the Laplace transform (show your work).
         \vspace*{6cm} \\
 
     If \( v_{out}(t) = 2 \parenth{ 1 -e^{-5 t} }\) :
@@ -113,40 +146,40 @@
 
 \clearpage\newpage
 
-\begin{prob}
-    A block with mass \SI{500}{\gram} oscillates at the end of a linear spring with a spring constant of \SI{7.5}{\newton\per\meter}.
-    You can assume this is a top-down view and the block is sliding on a frictionless surface, i.e. gravity is not a factor in this problem.
+% \begin{prob}
+%     A block with mass \SI{500}{\gram} oscillates at the end of a linear spring with a spring constant of \SI{7.5}{\newton\per\meter}.
+%     You can assume this is a top-down view and the block is sliding on a frictionless surface, i.e. gravity is not a factor in this problem.
 
 
-    \begin{figure}[h]
-        \centering
-        \begin{scaletikzpicturetowidth}{0.5\textwidth}
-            \begin{tikzpicture}[scale=\tikzscale]
-                \coordinate[] (origin) at (0, 0);
-                \coordinate[] (mass) at (1, 0);
+%     \begin{figure}[h]
+%         \centering
+%         \begin{scaletikzpicturetowidth}{0.5\textwidth}
+%             \begin{tikzpicture}[scale=\tikzscale]
+%                 \coordinate[] (origin) at (0, 0);
+%                 \coordinate[] (mass) at (1, 0);
                 
-                \node[block,minimum width=2cm, minimum height=2cm] (m) at (mass) {$m$};
-                \node[ground, rotate=-90, minimum width=2cm] (wall)  at (origin) {};
+%                 \node[block,minimum width=2cm, minimum height=2cm] (m) at (mass) {$m$};
+%                 \node[ground, rotate=-90, minimum width=2cm] (wall)  at (origin) {};
 
-                \draw (wall.north east) -- (wall.north west);
+%                 \draw (wall.north east) -- (wall.north west);
                 
-                % create nodes for the spring to attach to 
-                \node [virtual, left=of m.180] (sr) {};
-                \node [virtual, right=of wall.0] (sl) {};
+%                 % create nodes for the spring to attach to 
+%                 \node [virtual, left=of m.180] (sr) {};
+%                 \node [virtual, right=of wall.0] (sl) {};
 
-                \draw[spring] (origin.east) -- (m.west);
-        \end{tikzpicture}
-        \end{scaletikzpicturetowidth}
-        \caption{Mechanical System~\label{fig:mechanical_system}}
-    \end{figure}
+%                 \draw[spring] (origin.east) -- (m.west);
+%         \end{tikzpicture}
+%         \end{scaletikzpicturetowidth}
+%         \caption{Mechanical System~\label{fig:mechanical_system}}
+%     \end{figure}
 
-    \begin{subprob}
-    \item What is the period of the block's motion in seconds?
-    \item If the block's maximum acceleration is \SI{3.0}{\meter\per\second\squared}, what is the amplitude of the motion in \si{\meter}?
-    \end{subprob}
-\end{prob}
+%     \begin{subprob}
+%     \item What is the period of the block's motion in seconds?
+%     \item If the block's maximum acceleration is \SI{3.0}{\meter\per\second\squared}, what is the amplitude of the motion in \si{\meter}?
+%     \end{subprob}
+% \end{prob}
 
-\clearpage\newpage
+% \clearpage\newpage
 
 \begin{prob}
     A linear system's time response is given by
