@@ -58,7 +58,7 @@
                 \node [virtual, left=of m.180] (sr) {};
                 \node [virtual, right=of wall.0] (sl) {};
 
-                \draw[spring] (origin.east) -- (m.west);
+                \draw[spring] (origin.east) -- node [below] {$k$} (m.west) ;
         \end{tikzpicture}
         \end{scaletikzpicturetowidth}
         \caption{Mechanical System~\label{fig:mechanical_system}}
@@ -69,15 +69,12 @@
     \end{subprob}
 \end{prob}
 
-\clearpage\newpage
-
-\begin{prob}
-   Add problem from ENG341 
-\end{prob}
 
 \begin{prob}
 
-    \begin{figure}
+
+    Find the equations of motion for the model given in~\cref{fig:mech2}.
+    \begin{figure}[htbp]
         \centering
 
         \begin{tikzpicture}[every node/.style={outer sep=0pt,thick}]
@@ -94,11 +91,11 @@
             \node[ground, rotate=90, minimum width=2cm] (rwall) at (2, 0) {};
             \draw (rwall.north east) -- (rwall.north west);
 
-            \draw [spring] (wall.145) -- ($(M.north west)!(wall.145)!(M.south west)$);
-            \draw [damper] (wall.30) -- ($(M.north west)!(wall.30)!(M.south west)$);
+            \draw [spring] (wall.145) -- node [above, yshift=0.5em] {$k_1$} ($(M.north west)!(wall.145)!(M.south west)$);
+            \draw [damper] (wall.30) -- node [below, yshift=-0.5em] {$b_1$} ($(M.north west)!(wall.30)!(M.south west)$);
 
-            \draw [spring] (rwall.30) -- ($(M.north east)!(rwall.30)!(M.south east)$);
-            \draw [damper] (rwall.145) -- ($(M.north east)!(rwall.145)!(M.south east)$);
+            \draw [spring] (rwall.30) -- node[above, yshift=0.5em] {$k_2$} ($(M.north east)!(rwall.30)!(M.south east)$);
+            \draw [damper] (rwall.145) -- node [below, yshift=-0.5em] {$b_2$} ($(M.north east)!(rwall.145)!(M.south east)$);
             % \draw [-latex,ultra thick] (M.east) ++ (0.2cm,0) -- +(1cm,0);
 
             \draw[thick, dashed] ($(M.north west)$) -- ($(M.north west) + (0,1)$);
@@ -106,9 +103,44 @@
                 ($(M.north west) + (1,0.75)$) node[above] {$x$};
         \end{tikzpicture}
 
-
-        \caption{Mechanical System}
+        \caption{Mechanical System\label{fig:mech2}}
     \end{figure}
+\end{prob}
+
+\begin{prob}
+   Add problem from ENG341 
+
+   Spacecraft rotational dynamics
+\end{prob}
+
+\begin{prob}
+
+Problem 2 from previous semester HW1
+\begin{tikzpicture}[every node/.style={thick}]
+
+    \node (M) [draw,minimum width=1cm, minimum height=1cm] {$m$};
+    \draw [thick] (M.south west) ++ (0.2cm,-0.125cm) circle (0.125cm)  (M.south east) ++ (-0.2cm,-0.125cm) circle (0.125cm);
+
+    \node (ground) [ground,anchor=north,yshift=-0.25cm,minimum width=1.5cm] at (M.south) {};
+    \draw (ground.north east) -- (ground.north west);
+
+    \node[ground, rotate=-90, minimum width=2cm] (wall) at (-2, 0) {};
+    \draw (wall.north east) -- (wall.north west);
+
+    \node[ground, rotate=90, minimum width=2cm] (rwall) at (2, 0) {};
+    \draw (rwall.north east) -- (rwall.north west);
+
+    \draw [spring] (wall.145) -- node [above, yshift=0.5em] {$k_1$} ($(M.north west)!(wall.145)!(M.south west)$);
+    \draw [damper] (wall.30) -- node [below, yshift=-0.5em] {$b_1$} ($(M.north west)!(wall.30)!(M.south west)$);
+
+    \draw [spring] (rwall.30) -- node[above, yshift=0.5em] {$k_2$} ($(M.north east)!(rwall.30)!(M.south east)$);
+    \draw [damper] (rwall.145) -- node [below, yshift=-0.5em] {$b_2$} ($(M.north east)!(rwall.145)!(M.south east)$);
+    % \draw [-latex,ultra thick] (M.east) ++ (0.2cm,0) -- +(1cm,0);
+
+    \draw[thick, dashed] ($(M.north west)$) -- ($(M.north west) + (0,1)$);
+    \draw[ultra thick, -latex] ($(M.north west) + (0,0.75)$) -- 
+        ($(M.north west) + (1,0.75)$) node[above] {$x$};
+\end{tikzpicture}
 \end{prob}
 \end{document}
 
