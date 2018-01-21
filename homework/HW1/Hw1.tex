@@ -161,6 +161,41 @@
 \end{prob}
 
 \begin{prob}
+    In order to communicate with the forthcomming GWSAT, a ground station and movable antenna will be required at GWU.
+    Consider the model shown in~\cref{fig:antenna}.
+    A torque motor drives the antenna shown below about the vertical axis (perpindicular to the horizon) to control the azimuth pointing direction of the antenna.
+    The torque generatd by the motor is \( T(t) \) and the total moment of inertia of the antenna and platform about the vertical axis is \( J \) and the damping coefficient is \( b\).
+    Determine the equations of motion that describes the azimuth motion \( \phi\) of the antenna.
+
+    \begin{figure}[h]
+        \centering
+        \begin{scaletikzpicturetowidth}{0.25\textwidth}
+
+            \begin{tikzpicture}[scale=\tikzscale]
+                \pgfmathsetmacro{\dist}{1}
+
+                \coordinate[](origin) at (0, 0);
+                \coordinate[] (d) at (0, \dist);
+                \coordinate[] (w) at (0, 1.5*\dist);
+
+                \node[ground, anchor=north, minimum width=4em] (ground) at (origin) {};
+                \draw (ground.north west) -- (ground.north east);
+
+                \draw[rot_damper] (origin.north) -- (w.south);
+
+                \draw[thick] ($(w)+(-1,0.25)$) arc (-180:0:1 and 0.25);% right
+                \draw[thick] ($(w)+(-1,0.5)$) arc (-180:180:1 and 0.25);% 
+
+                \draw[thick, ->,>=stealth'] ($(w)+(-1,1.25)$) arc (-180:0:1 and 0.25) node [right] {$T(t)$};% 
+
+                \draw[thick] ($(w) + (-1,0.25)$) -- ($(w) + (-1,0.5)$);
+                \draw[thick] ($(w) + (1,0.25)$) -- ($(w) + (1,0.5)$);
+            \end{tikzpicture}
+        \end{scaletikzpicturetowidth}
+        \caption{Antenna Model~\label{fig:antenna}}
+    \end{figure}
+\end{prob}
+\begin{prob}
 
 Problem 2 from previous semester HW1
 \begin{tikzpicture}[every node/.style={thick}]
