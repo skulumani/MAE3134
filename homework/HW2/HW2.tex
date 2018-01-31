@@ -1,0 +1,76 @@
+\documentclass[10pt]{article}
+% \usepackage[letterpaper,text={6.5in,8.7in},centering]{geometry}
+\usepackage{amssymb,amsmath,times,url,graphicx,amsthm,alltt}
+%\usepackage[pdftex,urlcolor=blue,pdfpagemode=none,pdfstartview=FitH]{hyperref}
+\usepackage{my_packages}
+\usepackage{tikz_packages}
+%% url smaller font.
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+\makeatother
+\urlstyle{leo}
+
+%\usepackage[all,import]{xy}
+
+\renewcommand{\baselinestretch}{1.2}
+\date{}
+
+\renewcommand{\thesubsection}{\arabic{subsection}. }
+\renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection} }
+
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}[section]
+%\renewcommand{\theprob}{\arabic{section}.\arabic{prob}}
+\renewcommand{\theprob}{\arabic{prob}}
+
+\newenvironment{subprob}%
+{\renewcommand{\theenumi}{\alph{enumi}}\renewcommand{\labelenumi}{(\theenumi)}\begin{enumerate}}%
+{\end{enumerate}}%
+
+
+\begin{document}
+
+\pagestyle{empty}
+\section*{MAE3134: Homework 2}
+\vspace*{-0.4cm}
+\noindent{Due date: TBD}%\\%\vspace*{0.5cm}
+
+
+\begin{prob}
+    Find the transfer function for the following ordinary differential equation.
+    \begin{align*}
+        \dddot{c} + 3 \ddot{c} + 7 \dot{c} + 5 c = \ddot{r} + 4 \dot{r} + 3 r.
+    \end{align*}
+\end{prob}
+
+\begin{prob}
+    Find the ordinary differential equation for the given transfer function.
+    \begin{align*}
+        G(s) = \frac{C(s)}{R(s)} = \frac{2 s + 1}{s^2 + 6s + 2}.
+    \end{align*}
+\end{prob}
+
+\begin{prob}
+    Given the following transfer function:
+    \begin{align*}
+        G(s) = \frac{C(s)}{R(s)} = \frac{s}{(s +4)(s+8)} ,
+    \end{align*}
+    determine the output response, \( c(t) \), to a ramp input, \( r(t) = t \).
+\end{prob}
+
+\begin{prob}
+    Use Python/Matlab or some other tool to find the Laplace/Inverse Laplace transforms for the following functions.
+
+    \begin{subprob}
+        \item \[ f(t) = 5 t^2 \cos \parenth{3 t + \frac{\pi}{4}} \]
+        \item \[ f(t) = 5 t e^{-2t} \sin \parenth{4t + \frac{\pi}{3}}\]
+        \item \[ G(s) = \frac{(s^2+3s+7)(s+2)}{(s+3)(s+4)(s^2+2s+100)}\]
+        \item \[ G(s) = \frac{(s^3 + 4s^2 + 6s +5)}{(s+8)(s^2 + 8s+3)(s^2 + 5s+7)}\]
+    \end{subprob}
+\end{prob}
+
+\begin{prob}
+\end{prob}
+\end{document}
+
