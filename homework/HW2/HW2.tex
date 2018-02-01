@@ -71,6 +71,55 @@
 \end{prob}
 
 \begin{prob}
+    Find the ordinary differential equation for the given transfer function between the input \( R(s) \) and the output \( C(s)\).
+    \begin{figure}[h]
+        \centering
+        \begin{scaletikzpicturetowidth}{2\textwidth}
+            \begin{tikzpicture}[scale=\tikzscale, >=stealth'] \large
+                % node placement with matrix library: 5x4 array
+                \matrix[ampersand replacement=\&, row sep=0.2cm, column sep=0.4cm] {
+                    %
+                    \node[connector] (input) {}; \& 
+                    \node[blockdiagram] (sys) {$ \frac{s^5 + 2s^4 +4s^3 + s^2 +3}{s^6 +7s^5 +3s^4 + 2s^3 + s^2 +3}$}; \& 
+                    \node[connector] (output) {};\\ };
+
+                    % now link the nodes
+                    \draw [line] (input) node [above] {$R(s)$} -- (sys) -- node [above right] {$C(s)$}  (output);
+
+                \end{tikzpicture}
+            \end{scaletikzpicturetowidth}
+        \end{figure}
+
+\end{prob}
+
+\begin{prob}
+    Find the equivalent ordinary differential equation for the given transfer function between input \( R(s) = 3 t^3 \) and the output \( C(s)\).
+    \begin{figure}[h]
+        \centering
+        \begin{scaletikzpicturetowidth}{2\textwidth}
+            \begin{tikzpicture}[scale=\tikzscale, >=stealth'] \large
+                % node placement with matrix library: 5x4 array
+                \matrix[ampersand replacement=\&, row sep=0.2cm, column sep=0.4cm] {
+                    %
+                    \node[connector] (input) {}; \& 
+                    \node[blockdiagram] (sys) {$ \frac{s^4 + 2s^3 + 5s^2 + s + 1}{s^5 + 3s^4 + 2s^3 + 4s^2 +5s +2}$}; \& 
+                    \node[connector] (output) {};\\ };
+
+                    % now link the nodes
+                    \draw [line] (input) node [above] {$R(s)$} -- (sys) -- node [above right] {$C(s)$}  (output);
+
+                \end{tikzpicture}
+            \end{scaletikzpicturetowidth}
+        \end{figure}
+
+\end{prob}
+
+\begin{prob}
+    Given the following differential equation, solve for \( y(t) \) if all initial conditions are zero. 
+    Use the Laplace transform.
+    \begin{align*}
+        \ddiff{y}{t} + 12 \diff{y}{t} + 32 y = 32 u(t)
+    \end{align*}
 \end{prob}
 \end{document}
 
