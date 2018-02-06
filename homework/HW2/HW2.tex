@@ -34,7 +34,7 @@
 \pagestyle{empty}
 \section*{MAE3134: Homework 2}
 \vspace*{-0.4cm}
-\noindent{Due date: TBD}%\\%\vspace*{0.5cm}
+\noindent{Due date: 15 February 2018}%\\%\vspace*{0.5cm}
 
 
 \begin{prob}
@@ -52,7 +52,7 @@
     \item \[ G(s) = \frac{X(s)}{F(s)} = \frac{1}{s^2 + 2s+7} \]
     \item \[ G(s) = \frac{X(s)}{F(s)} = \frac{10}{\parenth{s+7}\parenth{s+8}}\]
     \item \[ G(s) = \frac{X(s)}{F(s)} = \frac{s+2}{s^3 + 8s^2 + 9s+15}\]
-    \item Find the differential equaiton for the system in~\cref{fig:blockdiagram}.
+    \item Find the differential equation for the system in~\cref{fig:blockdiagram}.
     \begin{figure}[h]
         \centering
             \begin{tikzpicture}[>=stealth'] \large
@@ -64,10 +64,10 @@
                     \node[connector] (output) {};\\ };
 
                     % now link the nodes
-                    \draw [line] (input) node [above] {$R(s)$} -- (sys) -- node [above right] {$C(s)$}  (output);
+                    \draw [line] (input) node [above left] {$R(s)$} -- (sys) -- node [above right] {$C(s)$}  (output);
 
                 \end{tikzpicture}
-            \caption{System~\label{fig:blockdiagram}}
+            \caption{Block Diagram~\label{fig:blockdiagram}}
         \end{figure}
 
     \item Find the ordinary differential equation for the transfer function between input \( R(s) = 3 t^3 \) and the output \( C(s)\) shown in~\cref{fig:bd2}.
@@ -87,7 +87,7 @@
 
                 \end{tikzpicture}
             \end{scaletikzpicturetowidth}
-            \caption{System~\label{fig:bd2}}
+            \caption{Block Diagram~\label{fig:bd2}}
         \end{figure}
     \end{subprob}
 \end{prob}
