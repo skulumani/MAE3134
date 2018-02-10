@@ -59,7 +59,60 @@
     \begin{align*}
         m_c = \SI{1}{\kilo\gram} \quad m_{pm} = \SI{0.01}{\kilo\gram} \quad b = \SI{0.2}{\newton\second\per\meter} \quad k = \SI{1}{\newton\per\meter}
     \end{align*}
+
+    \begin{subprob}
+        \item Find the output response \( x(t) \) if \( f(t) = \SI{30}{\newton}\) and the initial conditions are zero.
+        \item How does the response change if \( x(0) = \SI{0.1}{\meter} \) and \( \dot{x}(0) = 0 \)?
+        \item Use the initial and final value theorems to validate your solutions to the previous questions.
+        \item You discover that you'd like a different response so you naively modify the system parameters:
+            \begin{align*}
+        m_c = \SI{1}{\kilo\gram} \quad m_{pm} = \SI{0.01}{\kilo\gram} \quad b = \SI{0.02}{\newton\second\per\meter} \quad k = \SI{0.1}{\newton\per\meter}.
+            \end{align*}
+            What is the output response if \( f(t) = \SI{30}{\newton} \) and zero initial conditions. 
+        \item Generate a plot with all three output responses.
+    \end{subprob}
 \end{prob}
-    
+   
+\begin{prob}
+    You're trying to ``tune'' a high pass filter,  by simply guessing no less!
+    The filter is defined by
+    \begin{align}
+    \bracket{s + \frac{R_1 + R_2}{R_1 R_2 C} } V_{out}(s) = s V_{in}(s) + V_{out}(0) ,
+    \end{align}
+    where \( R_1 = \SI{40}{\kilo\ohm}, R_2 = \SI{200}{\kilo\ohm}, C = \SI{5}{\micro\farad}\).
+    \begin{subprob}
+    \item Find the output response for \( v_{in}(t) = 10 \sin 0.6 t \) with zero initial conditions.
+    \item Find the output response for \( v_{in}(t) = 10 \sin 60 t \) with zero initial conditions.
+    \item  Generate a plot with both responses and discuss how effective this design is for a \textbf{HIGH} pass filter.
+    \end{subprob}
+\end{prob}
+
+\begin{prob}
+    A Boeing 747 is in Straight and Level Unaccelerated Flight (SLUF) at \( \SI{40000}{ft}, \SI{871}{ft \per \second}\).
+    The linearized equations of longitudanal motion are given by
+    \begin{align}
+        \begin{bmatrix}
+            \begin{array}{ccc}
+                s + 0.0828 & -0.0215 & 0.5589 \\
+                0.0573 & 15.3348s + 5.9633 & -15.0685s \\
+                0.0057 & 0.1425s + 1.6165 & s^2 + 0.0438s
+            \end{array}
+        \end{bmatrix}
+        \begin{bmatrix}
+            \begin{array}{c}
+                \delta u \\ \delta \alpha \\ \delta \theta
+            \end{array}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            \begin{array}{c}
+                0 \\ -0.3226 \\ -1.2124
+            \end{array}
+        \end{bmatrix}
+        \delta e ,
+    \end{align}
+    where \( \delta u, \delta \theta, \delta e, \delta \alpha\) are the deviations of forward velocity in \si{ft \per \second}, pitch in degrees, elevation deflection in degree, and deviation of the angle of attack in degrees, respectively.
+
+\end{prob}
 \end{document}
 
