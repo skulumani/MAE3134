@@ -1,0 +1,54 @@
+\documentclass[10pt]{article}
+% \usepackage[letterpaper,text={6.5in,8.7in},centering]{geometry}
+\usepackage{amssymb,amsmath,times,url,graphicx,amsthm,alltt}
+%\usepackage[pdftex,urlcolor=blue,pdfpagemode=none,pdfstartview=FitH]{hyperref}
+\usepackage{my_packages}
+\usepackage{tikz_packages}
+%% url smaller font.
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+\makeatother
+\urlstyle{leo}
+
+%\usepackage[all,import]{xy}
+
+\renewcommand{\baselinestretch}{1.2}
+\date{}
+
+\renewcommand{\thesubsection}{\arabic{subsection}. }
+\renewcommand{\thesubsubsection}{\arabic{subsection}.\arabic{subsubsection} }
+
+\theoremstyle{definition}
+\newtheorem{prob}{Problem}[section]
+%\renewcommand{\theprob}{\arabic{section}.\arabic{prob}}
+\renewcommand{\theprob}{\arabic{prob}}
+
+\newenvironment{subprob}%
+{\renewcommand{\theenumi}{\alph{enumi}}\renewcommand{\labelenumi}{(\theenumi)}\begin{enumerate}}%
+{\end{enumerate}}%
+
+
+\begin{document}
+
+\pagestyle{empty}
+\section*{MAE3134: Homework 3}
+\vspace*{-0.4cm}
+\noindent{Due date: 20 February 2018}%\\%\vspace*{0.5cm}
+
+\begin{prob}
+    A low pass filter is modeled using using the following transfer fuction:
+    \begin{align}
+        \bracket{s + \frac{R_1 + R_2}{R_1 R_2 C}} V_{out}(s) = \frac{1}{R_1 C} V_{in}(s) + V_{out}(0), 
+    \end{align}
+    where \( R_1 = \SI{40}{\kilo\ohm}, R_2 = \SI{200}{\kilo\ohm}, C = \SI{5}{\micro\farad}\).
+
+    \begin{subprob}
+        \item Find the output voltage from the low pass filter assuming an input of \( V_{in}(t) = \SI{2}{\volt}\) and zero initial conditions.
+        \item Use the initial and final value theorems to validate your solution.
+        \item Generate a plot of the response.
+    \end{subprob}
+\end{prob}
+
+\end{document}
+
