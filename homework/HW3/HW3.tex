@@ -113,6 +113,65 @@
     \end{align}
     where \( \delta u, \delta \theta, \delta e, \delta \alpha\) are the deviations of forward velocity in \si{ft \per \second}, pitch in degrees, elevation deflection in degree, and deviation of the angle of attack in degrees, respectively.
 
+We can define a transfer function relating the input elevator deflection to the output of the pitch devaitions as
+\begin{align}
+    \frac{\theta(s)}{\delta e(s)} = \frac{-18.5 (s + 0.36) (s+0.08)}{(s + 0.47 \pm 1.24 j)(s+0.06)(s+0.02)} .
+\end{align}
+
+\begin{subprob}
+    \item Find the pitch response \( \theta (t) \) if the elevation is deflected a constant \SI{-0.01}{\degree}.
+\end{subprob}
+\end{prob}
+
+It is typically difficult to analyze the short period motion, due to the complex poles, and the phugoid motion, due to the real poles. 
+As a result, it is possible to seperate the dynamics into two seperate transfer functions:
+\begin{align}
+    \frac{\delta \alpha}{\delta e} &= \frac{-0.021 (s^2 + 56.7 s)}{s(s+0.283 \pm 1.24 j)} \\
+    \frac{\delta \theta}{\delta e} &= \frac{-1.21 (s + 0.36)}{s(s+0.283 \pm 1.24 j)}
+\end{align}
+
+\begin{prob}
+    Insert a tikz picture of a missle in flight
+    A missle in flight, as shown in Fig whatever, is subject to several forces, such as thrust, lift, drag, and gravity. 
+    The missle flies at an angle of attack, \( \alpha \), with respect to the velocity vector, creating lift.
+    For steering, the body angle from vertical , \( \phi\), is controlled by rotating the thrust vector at the tail.
+    The transfer function relating the body angle, \( \phi\), to the angular displacement, \( \delta \), of the engine is of the form
+    \begin{align}
+        \frac{\phi(s)}{\delta (s)} = \frac{K_a s + K_b}{K_3 s^3 + K_s s^2 + K_1 s + K_0}
+    \end{align}
+\end{prob}
+
+\begin{prob}
+    Add a picture
+
+    The transfer function relating the pitch angle \( \theta (s) \) to the elevator deflection angle \( \delta e (s) \) for an Unmanned Free-Swimming Submersible is given by
+    \begin{align}
+        \frac{\theta (s) }{\delta e(s)} = \frac{-0.125 (s + 0.435)}{(s+1.23)(s^2 + 0.226 s + 0.0169)} .
+    \end{align}
+
+    \begin{subprob}
+    \item Using only the second order poles from the transfer function predict the percent overshoot, rise time, peak time and settling time.
+    \item Using the Laplace transform, find the analytical expression for the pitch angle response to a step input of the elevator.
+    \item Evaluate the effect of teh additional pole and zero on the validity of the second order approximation.
+    \item Plot the step response of the vheicle dynamics and verify your conclusions found in the previous problem.
+    \end{subprob}
+\end{prob}
+
+\begin{prob}
+    Ships at sea undergo motion about their roll axis.
+    Fins called stabiliers are used to reduce this rolling motion.
+    The stabilizers can be positioned by a closed-loop roll control system that consists of components, such as fin actuators and sensors, as well as the ships roll dynamics.
+    Assume the roll dynamics, which relates the roll angle output, \( \theta (s) \) to a disturbance torque input, \( T_D(s)\) is given by
+    \begin{align}
+        \frac{\theta(s)}{\T_D(s)} = \frac{2.25}{s^2 + 0.5 s + 2.25} .
+    \end{align}
+
+    Accomplish the following:
+    \begin{subprob}
+        \item Find the natural frequency, damping ratio, peak time, settling time, rise time, and percent overshoot.
+        \item Find the analytical expression for the output response to a unit step input.
+        \item Use a computer tool to verify your solutions and plot the response to a step input.
+    \end{subprob}
 \end{prob}
 \end{document}
 
