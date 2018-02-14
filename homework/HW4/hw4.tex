@@ -1,0 +1,54 @@
+
+\begin{prob}
+    A Boeing 747 is in Straight and Level Unaccelerated Flight (SLUF) at \( \SI{40000}{ft}, \SI{871}{ft \per \second}\).
+    The linearized equations of longitudanal motion are given by
+    \begin{align}
+        \begin{bmatrix}
+            \begin{array}{ccc}
+                s + 0.0828 & -0.0215 & 0.5589 \\
+                0.0573 & 15.3348s + 5.9633 & -15.0685s \\
+                0.0057 & 0.1425s + 1.6165 & s^2 + 0.0438s
+            \end{array}
+        \end{bmatrix}
+        \begin{bmatrix}
+            \begin{array}{c}
+                \delta u \\ \delta \alpha \\ \delta \theta
+            \end{array}
+        \end{bmatrix}
+        =
+        \begin{bmatrix}
+            \begin{array}{c}
+                0 \\ -0.3226 \\ -1.2124
+            \end{array}
+        \end{bmatrix}
+        \delta e ,
+    \end{align}
+    where \( \delta u, \delta \theta, \delta e, \delta \alpha\) are the deviations of forward velocity in \si{ft \per \second}, pitch in degrees, elevation deflection in degree, and deviation of the angle of attack in degrees, respectively.
+
+We can define a transfer function relating the input elevator deflection to the output of the pitch devaitions as
+\begin{align}
+    \frac{\theta(s)}{\delta e(s)} = \frac{-18.5 (s + 0.36) (s+0.08)}{(s + 0.47 \pm 1.24 j)(s+0.06)(s+0.02)} .
+\end{align}
+
+\begin{subprob}
+    \item Find the pitch response \( \theta (t) \) if the elevation is deflected a constant \SI{-0.01}{\degree}.
+\end{subprob}
+\end{prob}
+
+It is typically difficult to analyze the short period motion, due to the complex poles, and the phugoid motion, due to the real poles. 
+As a result, it is possible to seperate the dynamics into two seperate transfer functions:
+\begin{align}
+    \frac{\delta \alpha}{\delta e} &= \frac{-0.021 (s^2 + 56.7 s)}{s(s+0.283 \pm 1.24 j)} \\
+    \frac{\delta \theta}{\delta e} &= \frac{-1.21 (s + 0.36)}{s(s+0.283 \pm 1.24 j)}
+\end{align}
+
+\begin{prob}
+    Insert a tikz picture of a missle in flight
+    A missle in flight, as shown in Fig whatever, is subject to several forces, such as thrust, lift, drag, and gravity. 
+    The missle flies at an angle of attack, \( \alpha \), with respect to the velocity vector, creating lift.
+    For steering, the body angle from vertical , \( \phi\), is controlled by rotating the thrust vector at the tail.
+    The transfer function relating the body angle, \( \phi\), to the angular displacement, \( \delta \), of the engine is of the form
+    \begin{align}
+        \frac{\phi(s)}{\delta (s)} = \frac{K_a s + K_b}{K_3 s^3 + K_s s^2 + K_1 s + K_0}
+    \end{align}
+\end{prob}
