@@ -37,6 +37,89 @@
 \noindent{Due date: 20 February 2018}%\\%\vspace*{0.5cm}
 
 \begin{prob}
+    For each system below, analytically find the output response \( c(t)\) for a step input.
+    Also find the time constant, rise time and settling time for each case.
+    Generate a plot with the responses.
+
+    \begin{subprob}
+        \item 
+
+    \begin{figure}[h]
+        \centering
+            \begin{tikzpicture}[>=stealth'] \large
+                % node placement with matrix library: 5x4 array
+                \matrix[ampersand replacement=\&, row sep=0.2cm, column sep=0.4cm] {
+                    %
+                    \node[connector] (input) {}; \& 
+                    \node[blockdiagram] (sys) {$ \frac{5}{s+5}$}; \& 
+                    \node[connector] (output) {};\\ };
+
+                    % now link the nodes
+                    \draw [line] (input) node [above left] {$R(s)$} -- (sys) -- node [above right] {$C(s)$}  (output);
+
+                \end{tikzpicture}
+            \caption{Block Diagram~\label{fig:blockdiagram}}
+        \end{figure}
+        \item 
+    \begin{figure}[h]
+        \centering
+            \begin{tikzpicture}[>=stealth'] \large
+                % node placement with matrix library: 5x4 array
+                \matrix[ampersand replacement=\&, row sep=0.2cm, column sep=0.4cm] {
+                    %
+                    \node[connector] (input) {}; \& 
+                    \node[blockdiagram] (sys) {$ \frac{20}{s+20}$}; \& 
+                    \node[connector] (output) {};\\ };
+
+                    % now link the nodes
+                    \draw [line] (input) node [above left] {$R(s)$} -- (sys) -- node [above right] {$C(s)$}  (output);
+
+                \end{tikzpicture}
+            \caption{Block Diagram~\label{fig:blockdiagram}}
+        \end{figure}
+    \end{subprob}
+\end{prob}
+
+\begin{prob}
+    For each of the transfer functions below, find the locations of the poles and zeros.
+    Plot the poles and zeros on the complex plane and write an expression for the general form of the response, \textbf{WITHOUT} using the inverse Laplace transform.
+    State the nature of the response, i.e overdamped, underdamped etc.
+
+    \begin{subprob}
+        \item \[ T(s) = \frac{2}{s+2}\]
+        \item \[ T(s) = \frac{5}{(s+3)(s+6)}\]
+        \item \[ T(s) = \frac{10(s+7)}{(s+10)(s+20)}\]
+        \item \[ T(s) = \frac{20}{s^2 + 6s + 144}\]
+        \item \[ T(s) = \frac{s+2}{s^+9}\]
+        \item \[ T(s) = \frac{s+5}{(s+10)^2}\]
+    \end{subprob}
+\end{prob}
+
+
+\clearpage\newpage
+\begin{prob}
+    The system shown in~\cref{fig:general_second_order} has a unit step input.
+    Find the analytical output response as a function of time.
+    Assume the system is underdamped, \( \zeta < 1 \). 
+    The result will match that what we have seen in class.
+    \begin{figure}[h]
+        \centering
+            \begin{tikzpicture}[>=stealth'] \large
+                % node placement with matrix library: 5x4 array
+                \matrix[ampersand replacement=\&, row sep=0.2cm, column sep=0.4cm] {
+                    %
+                    \node[connector] (input) {}; \& 
+                    \node[blockdiagram] (sys) {$ \frac{\omega_n^2}{s^2 + 2 \zeta \omega_n s + \omega_n^2}$}; \& 
+                    \node[connector] (output) {};\\ };
+
+                    % now link the nodes
+                    \draw [line] (input) node [above left] {$R(s)$} -- (sys) -- node [above right] {$C(s)$}  (output);
+
+                \end{tikzpicture}
+            \caption{Block Diagram~\label{fig:general_second_order}}
+        \end{figure}
+\end{prob}
+\begin{prob}
     A low pass filter is modeled using using the following transfer fuction:
     \begin{align}
         \bracket{s + \frac{R_1 + R_2}{R_1 R_2 C}} V_{out}(s) = \frac{1}{R_1 C} V_{in}(s) + V_{out}(0), 
@@ -57,7 +140,7 @@
 \begin{prob}
     A single axis accelerometer is modeled using the following transfer function:
     \begin{align}
-        \parenth{s^2 + \frac{b}{m_{pm}} + \frac{k}{m_{pm}}} X(s) = \frac{F(s)}{m_c} + s x(0) + \parenth{\dot{x}(0) + \frac{b}{m_{pm}} x(0)},
+        \parenth{s^2 + s\frac{b}{m_{pm}} + \frac{k}{m_{pm}}} X(s) = \frac{F(s)}{m_c} + s x(0) + \parenth{\dot{x}(0) + \frac{b}{m_{pm}} x(0)},
     \end{align}
     with the following parameters:
     \begin{align*}
@@ -65,7 +148,7 @@
     \end{align*}
 
     \begin{subprob}
-        \item Find the analytical output response \( x(t) \) if \( f(t) = \SI{30}{\newton}\) and the initial conditions are zero.
+        \item Find the analytical output response, \( x(t) \), if \( f(t) = \SI{30}{\newton}\) and the initial conditions are zero.
         \item How does the response change if \( x(0) = \SI{0.1}{\meter} \) and \( \dot{x}(0) = 0 \)?
         \item Use the initial and final value theorems to validate your solutions to the previous questions.
         \item You discover that you'd like a different response so you naively modify the system parameters:
@@ -119,12 +202,12 @@
 \begin{prob}
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.5\textwidth]{figures/partd-03.jpg}
+        \includegraphics[width=0.4\textwidth]{figures/partd-03.jpg}
         \caption{Rolling Ship on Gun accuracy~\label{fig:gun}}
     \end{figure}
     Ships at sea undergo motion about their roll axis, as demonstrated in~\cref{fig:gun}.
     Fins called stabilizers are used to reduce this rolling motion.
-    The stabilizers can be positioned by a closed-loop roll control system that consists of actuator, such as fins or thrusters, and sensors, such as gyroscopes or accelerometers, as well as a model of the ship dynamics.
+    The stabilizers can be positioned by a closed-loop roll control system that consists of actuators, such as fins or thrusters, and sensors, such as gyroscopes or accelerometers, as well as a model of the ship dynamics.
     Assume the roll dynamics, which relates the roll angle output, \( \theta (s) \) to a disturbance torque input, \( T_D(s)\), is given by
     \begin{align}
         \frac{\theta(s)}{\T_D(s)} = \frac{2.25}{s^2 + 0.5 s + 2.25} .
@@ -138,6 +221,14 @@
         \item Plot the location of the poles on the complex plane. 
             In addition, mark the values of damping ratio and natural frequency on your plot.
         \item Do you believe this roll response is acceptable for a ship in response to an input disturbance?
+        \item Find values for \( \zeta, \omega_n\) such that the response satisfies the following specifications:
+            \begin{itemize}
+                \item \( T_p \leq \SI{5}{\second}\)
+                \item \( T_s \leq \SI{10}{\second}\)
+                \item \( \% OS \leq 20\%\)
+            \end{itemize}
+            What is your new system, where are the poles?
+            Generate a plot of your modified system and show that it meets the specifications?
     \end{subprob}
 \end{prob}
 \end{document}
