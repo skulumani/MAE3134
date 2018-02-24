@@ -193,6 +193,36 @@
             \begin{align*}
                 \frac{C(s)}{R(s)} = \frac{2^2 + 7s + 2}{s^3 + 9s^2 + 26s + 24}
             \end{align*}
+
+        \item 
+            \begin{align*}
+                G(s) = \frac{2s + 1}{s^2 + 7s +9}
+            \end{align*}
    \end{subprob}
+\end{prob}
+
+\begin{prob}
+    Find the transfer function for the following systems.
+    Assume the output is \( Y(s) \) and the input is \( U(s) \).
+
+    \begin{subprob}
+        \item 
+            \begin{align*}
+                \dot{\vecbf{x}} &= 
+                \begin{bmatrix} 0 & 1 & 0 \\
+                    0 & 0 & 1 \\
+                    -1 & -2 & -3
+                \end{bmatrix} \vecbf{x} +
+                \begin{bmatrix} 10 \\ 0 \\ 0\end{bmatrix} u \\
+                y &= \begin{bmatrix} 1 & 0 & 0 \end{bmatrix} \vecbf{x}
+            \end{align*}
+        \item 
+            \begin{align*}
+                \dot{\vecbf{x}} &= 
+                \begin{bmatrix}-4 & -1.5 \\ 4 & 0\end{bmatrix} \vecbf{x} +
+                \begin{bmatrix}2 \\ 0\end{bmatrix} u \\
+                y &= \begin{bmatrix}1.5 & 0.625\end{bmatrix} \vecbf{x}
+            \end{align*}
+    \end{subprob}
 \end{prob}
 \end{document}
