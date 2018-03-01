@@ -8,6 +8,7 @@
 \usepackage{pdfpages}
 % change the formatting for a section (which we're treating as a problem)
 \titleformat{\section}[runin]{\normalfont\bfseries}{}{0em}{#1\ \thesection}
+\titleformat{\subsection}[runin]{\normalfont\bfseries}{}{0em}{#1\ \thesubsection}
 \crefformat{section}{problem #2#1#3}
 \Crefformat{section}{Problem #2#1#3}
 
@@ -53,7 +54,7 @@ Elon needs your help to choose a set of poles which will satisfy the specificati
     \item Label the specifications lines and show your work.
     \item Choose a set of poles that will meet the requirements.
     \item Determine the transfer function representation for this sytem.
-    \item Use the initial and final value theorems to determine the initial and final values of \( x (t) \).
+    \item Use the initial and final value theorems to determine the initial and final values of the output response assuming a step input.
 \end{enumerate}
 
 \begin{figure*}[htbp]
@@ -69,9 +70,16 @@ Elon needs your help to choose a set of poles which will satisfy the specificati
 
 \newpage
 \thispagestyle{plain}
-\mbox{}
 
+\section{Problem}
+Given the following expression for \( X(s) \), find \( x(t)\). 
+You must show all of your work.
 
+\begin{align*}
+    X(s) = \frac{30}{s\parenth{s^2 + 2s + 10}}
+\end{align*}
+
+\clearpage\newpage
 \section{Problem}
 Given the state space representation defined as
 \begin{align*}
@@ -80,7 +88,7 @@ Given the state space representation defined as
 \end{align*}
 \textbf{DERIVE} the expression for the transfer function \(\frac{\vb{Y}(s)}{\vb{U}(s)}\).
 \vspace{13cm}
-\section{Problem}
+\subsection{Problem}
 
 List at least two advantages of state-space or ``modern control'' techniques as compared to ``classical control'' approaches.
 \vspace{5cm}
@@ -136,10 +144,19 @@ Consider the electrical circuit shown in~\cref{fig:elec_circuit}:
 \end{scaletikzpicturetowidth}
 \caption{Electrical Circuit~\label{fig:elec_circuit}}
 \end{figure}
+
+\section{Problem}
+Given the following differential equation
+\begin{align*}
+    \ddot{\theta} + 3 \dot{\theta} + 2 \theta = 24 u(t).
+\end{align*}
+
+\begin{enumerate}
+    \item Find teh state space representation assuming the state is  defined as \( x = \begin{bmatrix} \theta & \dot{\theta}\end{bmatrix}^T\).
+    \item Find the matrix \( \Phi(s) = \parenth{sI - A}^{-1}\).
+\end{enumerate}
 \clearpage
 \newpage
-\thispagestyle{plain}
-\mbox{}
 \clearpage
 \includepdf{../../laplace_transform_table.pdf}
 \end{document}  
