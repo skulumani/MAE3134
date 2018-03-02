@@ -55,6 +55,7 @@ Elon needs your help to choose a set of poles which will satisfy the specificati
     \item Choose a set of poles that will meet the requirements.
     \item Determine the transfer function representation for this sytem.
     \item Use the initial and final value theorems to determine the initial and final values of the output response assuming a step input.
+    \item Describe the effect of moving the poles to the LEFT, i.e. more negative, on the system response specifications.
 \end{enumerate}
 
 \begin{figure*}[htbp]
@@ -102,7 +103,7 @@ For the electrical system in~\cref{fig:elec_circuit_2}:
         \begin{align*}
         \vb{x} = \begin{bmatrix}q_1 & i_1 & q_2 & i_2\end{bmatrix}^T,
         \end{align*}
-        where \(q_1, i_1\) represent the charge and current in the left loop while \(q_2, i_2\) represent the charge and current in the right loop. 
+        where \(q_1, i_1\) represent the charge and current in the left loop while \(q_2, i_2\) represent the charge and current in the right loop, respectively. 
         The output is defined as
         \begin{align*}
         y = \begin{bmatrix} q_1 & q_2 \end{bmatrix}^T.
@@ -125,25 +126,6 @@ For the electrical system in~\cref{fig:elec_circuit_2}:
 \newpage
 \mbox{}
 \clearpage
-\section{Problem}
-Consider the electrical circuit shown in~\cref{fig:elec_circuit}:
-\begin{enumerate}
-    \item Find the differential equations which govern the behavior of the electrical system.
-    \item Construct the state space representation of the system. 
-        Assume the desired output is the charge in the system.
-    \item Find the output response of the system assuming zero initial conditions and a step input of \(u(t) = \SI{24}{\volt}\)
-\end{enumerate}
-\begin{figure}[htbp]
-\centering
-\begin{scaletikzpicturetowidth}{0.5\textwidth}
-    \begin{tikzpicture}[scale=\tikzscale]
-        \draw (0,0) to[american voltage source,v<=\( u(t)\)] (0,2) 
-        to[inductor, l^=1<\henry>] (2,2) to[resistor, l=3<\ohm>] (2,0) 
-        to[capacitor, l^=0.5<\farad>] (0,0); 
-    \end{tikzpicture}
-\end{scaletikzpicturetowidth}
-\caption{Electrical Circuit~\label{fig:elec_circuit}}
-\end{figure}
 
 \section{Problem}
 Given the following differential equation
@@ -152,7 +134,8 @@ Given the following differential equation
 \end{align*}
 
 \begin{enumerate}
-    \item Find teh state space representation assuming the state is  defined as \( x = \begin{bmatrix} \theta & \dot{\theta}\end{bmatrix}^T\).
+    \item Find the transfer function \( G(s) = \frac{\theta(s)}{U(s)} \).
+    \item Find the state space representation assuming the state is  defined as \( x = \begin{bmatrix} \theta & \dot{\theta}\end{bmatrix}^T\).
     \item Find the matrix \( \Phi(s) = \parenth{sI - A}^{-1}\).
 \end{enumerate}
 \clearpage
