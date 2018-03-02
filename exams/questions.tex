@@ -1,0 +1,20 @@
+
+\section{Problem}
+Consider the electrical circuit shown in~\cref{fig:elec_circuit}:
+\begin{enumerate}
+    \item Find the differential equations which govern the behavior of the electrical system.
+    \item Construct the state space representation of the system. 
+        Assume the desired output is the charge in the system.
+    \item Find the output response of the system assuming zero initial conditions and a step input of \(u(t) = \SI{24}{\volt}\)
+\end{enumerate}
+\begin{figure}[htbp]
+\centering
+\begin{scaletikzpicturetowidth}{0.5\textwidth}
+    \begin{tikzpicture}[scale=\tikzscale]
+        \draw (0,0) to[american voltage source,v<=\( u(t)\)] (0,2) 
+        to[inductor, l^=1<\henry>] (2,2) to[resistor, l=3<\ohm>] (2,0) 
+        to[capacitor, l^=0.5<\farad>] (0,0); 
+    \end{tikzpicture}
+\end{scaletikzpicturetowidth}
+\caption{Electrical Circuit~\label{fig:elec_circuit}}
+\end{figure}
