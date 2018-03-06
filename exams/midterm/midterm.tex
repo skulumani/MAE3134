@@ -40,6 +40,19 @@
     \vfill
 \end{titlepage}
 
+\section{Problem}
+Elon Musk, CEO of SpaceX and Tesla Motors, is developing his newest spacecraft.
+The output response of a critical subsystem can be defined by the following function, \( X(s) \).
+\begin{align*}
+    X(s) = \frac{30}{s\parenth{s^2 + 2s + 10}}
+\end{align*}
+Find the output response in the time domain, i.e. find \( x(t) \).
+Ensure you show all of your work, as Elon believes in the maxim ``trust but verify''.
+
+
+\clearpage\newpage
+\mbox{}
+\clearpage\newpage
 \section{Problem}\label{prob:sys_response_to_poles}
 Elon Musk, CEO of SpaceX and Tesla Motors, has a background in physics but unfortunately has never passed a Linear Dynamics course. 
 His newest space vehicle must satisfy the following second order time response specifications for a unit step input:
@@ -69,29 +82,23 @@ Elon needs your help to choose a set of poles which will satisfy the specificati
 \end{scaletikzpicturetowidth}
 \end{figure*}
 
-\newpage
-\thispagestyle{plain}
-
-\section{Problem}
-Given the following expression for \( X(s) \), find \( x(t)\). 
-You must show all of your work.
-
-\begin{align*}
-    X(s) = \frac{30}{s\parenth{s^2 + 2s + 10}}
-\end{align*}
-
 \clearpage\newpage
+\mbox{}
+\clearpage\newpage
+
 \section{Problem}
-Given the state space representation defined as
+Elon has read the Wikipedia page on ``State Space Control'' and is intrigued.
+However, he is having difficulty with converting the state space representation to the equivalent transfer function.
 \begin{align*}
     \vb{\dot{x}} &= A \vb{x} + B \vb{u}, \\
     \vb{y} &= C \vb{x} + D\vb{u},
 \end{align*}
-\textbf{DERIVE} the expression for the transfer function \(\frac{\vb{Y}(s)}{\vb{U}(s)}\).
+Starting with the standard state space form, \textbf{DERIVE} the expression for the transfer function \(\frac{\vb{Y}(s)}{\vb{U}(s)}\).
+Remember to show all of your work.
 \vspace{13cm}
 \subsection{Problem}
-
-List at least two advantages of state-space or ``modern control'' techniques as compared to ``classical control'' approaches.
+``Modern! Sch-Modern!, transfer functions are fine...'' exlaims Elon during a particular heated engineering review meeting.
+List at least two advantages of state-space or ``modern control'' techniques as compared to ``classical control'' approaches to convince Elon of your superior knowledge.
 \vspace{5cm}
 \clearpage
 \section{Problem}
@@ -138,8 +145,8 @@ Given the following differential equation
     \item Find the state space representation assuming the state is  defined as \( x = \begin{bmatrix} \theta & \dot{\theta}\end{bmatrix}^T\).
     \item Find the matrix \( \Phi(s) = \parenth{sI - A}^{-1}\).
 \end{enumerate}
-\clearpage
-\newpage
+\clearpage\newpage
+\mbox{}
 \clearpage
 \includepdf{../../laplace_transform_table.pdf}
 \end{document}  
