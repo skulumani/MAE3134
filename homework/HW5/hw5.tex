@@ -40,7 +40,7 @@
 \begin{prob}
     For each of the electrical systems below, find the state space representation.
     \begin{subprob}
-    \item There is a single voltage source and the output is the voltage difference across the capacitor.
+    \item There is a single voltage source and the output is the voltage difference across the capacitor \( C_1 \).
         \begin{figure}[h]
             \centering
             \begin{scaletikzpicturetowidth}{0.8\textwidth}
@@ -69,7 +69,7 @@
                 \end{tikzpicture}
             \end{scaletikzpicturetowidth}
         \end{figure}
-    \item The output is \( v_o(t) \) defining the voltage across the resistor \( R_2\).
+    \item The output is \( v_o(t) \) which defines the voltage across the resistor \( R_3\).
         \begin{figure}[h]
             \centering
             \begin{scaletikzpicturetowidth}{0.5\textwidth}
@@ -86,4 +86,25 @@
     \end{subprob}
 \end{prob}
 
+\begin{prob}
+    \begin{figure}[h]
+        \centering
+        \begin{scaletikzpicturetowidth}{1\textwidth}
+            \begin{tikzpicture}[scale=\tikzscale]
+            \draw (0, 0) node[inner sep=0] {\includegraphics[width=0.7\textwidth]{figures/ArWeg.png}};
+            \draw (-2, 1.4) node {\(\alpha\)};
+        \end{tikzpicture}
+    \end{scaletikzpicturetowidth}
+    \caption{Missile in flight~\label{fig:missile}}
+    \end{figure}
+    A missile in flight, as shown in~\cref{fig:missile}, is subject to several forces: thrust, lift, draft, and gravity.
+    The missile flies at an angle of attack \( \alpha \), from its longitutinaal axis, creating lift. 
+    For steering, the body angle from vertical, \( \phi \), is controlled by rotating the engine at the tail. 
+    The transfer function relating the body angle, \( \phi \), to the angular displacement \( \delta \) of the engine is of the form
+    \begin{align*}
+        \frac{\Phi(s)}{\delta(s)} = \frac{K_a s + K_b}{K_3 s^3 + K-2 s^2 + K_1 s + K_0}.  
+    \end{align*}
+
+    Find the representation of the missile steering control in state space.
+\end{prob}
 \end{document}
