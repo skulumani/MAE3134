@@ -1,8 +1,5 @@
 
 \documentclass[10pt]{article}
-% \usepackage[letterpaper,text={6.5in,8.7in},centering]{geometry}
-\usepackage{amssymb,amsmath,times,url,graphicx,amsthm,alltt}
-%\usepackage[pdftex,urlcolor=blue,pdfpagemode=none,pdfstartview=FitH]{hyperref}
 \usepackage{my_packages}
 \usepackage{tikz_packages}
 %% url smaller font.
@@ -153,6 +150,61 @@
             \[
                 G_2(s) = \frac{Q(s)}{\delta_{com}(s)}
             \]
+    \end{subprob}
+\end{prob}
+
+\clearpage\newpage
+\begin{prob}
+    An autopilot is to be designed for a submarine as shown in~\cref{fig:submarine} to maintain a constant depth under severe wave disturbances.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.4\textwidth]{figures/submarine.png}
+        \caption{Submarine pitch axis control~\label{fig:submarine}}
+    \end{figure}
+    This system has two inputs and two outputs in contrast to classical control methods of single input and single output systems.
+    The linearized dynamics under neutral buoyancy and at a constant speed are given by
+    \begin{align*}
+        \dot{\vecbf{x}} &= A \vecbf{x} + B \vecbf{u} \\
+        \vecbf{y} &= C \vecbf{x}
+    \end{align*}
+    where
+    \begin{align*}
+        A &= \begin{bmatrix}
+            -0.038 & 0.896 & 0 & 0.0015 \\
+            0.0017 & -0.092 & 0 & -0.0056 \\
+            1 & 0 & 0 & -3.086 \\
+            0 & 1 & 0 & 0
+        \end{bmatrix}
+        \quad 
+        B = \begin{bmatrix}
+            -0.0075 & -0.023 \\
+            0.0017 & -0.0022 \\
+            0 & 0 \\
+            0 & 0
+        \end{bmatrix} \\
+        C &= \begin{bmatrix}
+            0 & 0 & 1 & 0 \\
+            0 & 0 & 0 & 1
+        \end{bmatrix}
+    \end{align*}. 
+
+    The state, output and input are defined as
+    \begin{align*}
+        \vecbf{x} = \begin{bmatrix}
+            w \\ q \\ z \\ \theta
+        \end{bmatrix}
+        \quad
+        \vecbf{y} = \begin{bmatrix} z \\ \theta \end{bmatrix} \quad \vecbf{u} = \begin{bmatrix} \delta_B \\ \delta_S \end{bmatrix}
+    \end{align*}
+    where \( w\) is the heave velocity, \( q \) is the pitch rate, \( z \) is the submarine depth, \( \theta\) is the pitch angle, \( \delta_B\) is the bow hydroplane angle, and \( \delta_S\) is the stern hydroplane angle.
+
+    \begin{subprob}
+        \item Use Matlab/Python to find the transfer function matrix. 
+            Recall there should be four possible transfer functions.
+        \item Using the previous results write the transfer functions for the following input/output combinations.
+            \begin{align*}
+                \frac{z(s)}{\delta_B(s)} ,\quad \frac{z(s)}{\delta_S(s)} ,\quad \frac{\theta(s)}{\delta_B(s)} ,\quad \frac{\theta(s)}{\delta_S(s)}
+            \end{align*}
     \end{subprob}
 \end{prob}
 \end{document}
