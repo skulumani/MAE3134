@@ -102,10 +102,10 @@
     For steering, the body angle from vertical, \( \phi \), is controlled by rotating the engine at the tail. 
     The transfer function relating the body angle, \( \phi \), to the angular displacement \( \delta \) of the engine is of the form
     \begin{align*}
-        \frac{\Phi(s)}{\delta(s)} = \frac{K_a s + K_b}{K_3 s^3 + K-2 s^2 + K_1 s + K_0}.  
+        \frac{\Phi(s)}{\delta(s)} = \frac{K_a s + K_b}{K_3 s^3 + K_2 s^2 + K_1 s + K_0}.  
     \end{align*}
 
-    Find the representation of the missile steering control in state space.
+    \noindent Find the representation of the missile steering control in state space.
 \end{prob}
 
 \clearpage\newpage
@@ -121,5 +121,38 @@
      The F-4 remained in active use through the 1991 Gulf War serving in reconnaissance and Wild Weasel (Suppression of Enemy Air Defenses) roles.
     
      Normal accelerations, \( a_n \), and pitch rate, \( q \), are controlled by elevator deflection, \( \delta_e\), on the horizontal stabilizers and by canard deflection, \( \delta_c \).
+    A commanded deflection , \( \delta_{com} \), is used to effect a change in both \( \delta_e \) and \( \delta_c\).
+    The actuator deflections, combined with the aircraft longitudinal dynamics yield \( a_n \) and \( q\).
+    The state equatinos describing the effect of \( \delta_{com} \) on \( a_n \) and \( q\) is given by
+    \begin{align*}
+        \begin{bmatrix} 
+            \dot a_n \\ \dot q \\ \dot \delta_e 
+        \end{bmatrix}
+        = \begin{bmatrix}
+            -1.702 & 50.72 & 263.38 \\
+            0.22 & -1.418 & -31.99\\
+            0 & 0 & -14
+        \end{bmatrix}
+        \begin{bmatrix}
+            a_n \\ q \\ \delta_e
+        \end{bmatrix}
+        + 
+        \begin{bmatrix}
+            -272.06 \\ 0 \\14
+        \end{bmatrix}
+        \delta_{com} 
+    \end{align*} .
+
+    \noindent Find the following transfer functions:
+    \begin{subprob}
+        \item
+            \[
+                G_1(s) = \frac{A_n(s)}{\delta_{com}(s)}
+            \]
+        \item 
+            \[
+                G_2(s) = \frac{Q(s)}{\delta_{com}(s)}
+            \]
+    \end{subprob}
 \end{prob}
 \end{document}
