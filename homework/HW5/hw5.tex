@@ -207,4 +207,59 @@
             \end{align*}
     \end{subprob}
 \end{prob}
+
+\begin{prob}
+    Linearize (if possible) the following systems about \textbf{EACH} of the their equilibrium states, if not possible state why, and obtain the state matrix, \( A \), for these linearized systems.
+
+    \begin{subprob}
+        \item \[ \dot x = x^3\]
+        \item \[ \dot x = \sqrt{ \abs{x}} \]
+        \item The following scalar equations are one form of Euler's equations for the rotational motion of a rigid body. 
+            You may assume that the body is unsymmetric, i.e. \( I_1 \neq I_2 \neq I_3\).
+            \begin{align*}
+                I_1 \dot \omega_1 &= (I_2 - I_3) \omega_2 \omega_3 , \\
+                I_2 \dot \omega_2 &= (I_3 - I_1) \omega_3 \omega_1 , \\
+                I_3 \dot \omega_3 &= (I_1 - I_2) \omega_1 \omega_2  \\
+            \end{align*}
+    \end{subprob}
+\end{prob}
+
+\begin{prob}
+    Linearize about each equilibrium point and find the state matrix, \( A \) for the state space representation of the linearized system.
+
+    \begin{subprob}
+        \item \[ \ddot y + \parenth{y^2 - 1} \dot y + y = 0\] where \( y(t) \) is a scalar.
+        \item \[ \ddot y + \dot y + y - y^3 = 0 \] where \( y(t) \) is a scalar.
+        \item \begin{align*}
+                \parenth{M + m} \ddot y + ml \ddot \theta \cos \theta - ml \dot \theta^2 \sin \theta + ky &= 0, \\
+                m l \ddot y \cos \theta + ml^2 \ddot \theta + m g l \sin \theta &=0.
+            \end{align*}
+    
+    \end{subprob}
+\end{prob}
+
+\begin{prob}
+    Obtain the transfer function (matrix) for the following system
+    \begin{align*}
+        \ddot y_1 + \ddot y_2 + y_1 + y_2 &=  u_1 + \dot u_2 , \\
+        2 \ddot y_1 + 3 \ddot y_2 + y_1 - y_2 &= 0 .
+    \end{align*}
+\end{prob}
+
+\begin{prob}
+    Obtain the transfer function of the system with input \( u \) and output \( y \) described by
+    \begin{align*}
+        \ddot q_1 + 3 \dot q_2 + \dot q_1 + 2 q_2 &= \dot u + 4 u , \\
+        \ddot q_1 + 4 \dot q_2 + 3 q_2 &= u , \\
+        y & =  q_1 + q_2.
+    \end{align*}
+\end{prob}
+
+\begin{prob}
+    Obtain the transfer funciton for the following system
+    \begin{align*}
+        \dot x(t) &= - x(t) + 2 x(t-h) + u(t) , \\
+        y(t) &= x(t)
+    \end{align*}
+\end{prob}
 \end{document}
