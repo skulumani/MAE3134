@@ -94,7 +94,7 @@
     \caption{Missile in flight~\label{fig:missile}}
     \end{figure}
     A missile in flight, as shown in~\cref{fig:missile}, is subject to several forces: thrust, lift, draft, and gravity.
-    The missile flies at an angle of attack \( \alpha \), from its longitutinaal axis, creating lift. 
+    The missile flies at an angle of attack \( \alpha \), from its longitudinal axis, creating lift. 
     For steering, the body angle from vertical, \( \phi \), is controlled by rotating the engine at the tail. 
     The transfer function relating the body angle, \( \phi \), to the angular displacement \( \delta \) of the engine is of the form
     \begin{align*}
@@ -214,7 +214,7 @@
         \item \[ \dot x = x^3\]
         \item \[ \dot x = \sqrt{ \abs{x}} \]
         \item The following scalar equations are one form of Euler's equations for the rotational motion of a rigid body. 
-            You may assume that the body is unsymmetric, i.e. \( I_1 \neq I_2 \neq I_3\).
+            You may assume that the body is non-symmetric, i.e. \( I_1 \neq I_2 \neq I_3\).
             \begin{align*}
                 I_1 \dot \omega_1 &= (I_2 - I_3) \omega_2 \omega_3 , \\
                 I_2 \dot \omega_2 &= (I_3 - I_1) \omega_3 \omega_1 , \\
@@ -255,7 +255,7 @@
 \end{prob}
 
 \begin{prob}
-    Obtain the transfer funciton for the following system
+    Obtain the transfer function for the following system
     \begin{align*}
         \dot x(t) &= - x(t) + 2 x(t-h) + u(t) , \\
         y(t) &= x(t)
