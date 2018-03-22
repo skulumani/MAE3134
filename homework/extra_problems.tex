@@ -173,3 +173,22 @@
         \item Find the output equation if \( x_3(t)\) is the desired output.
     \end{subprob}
 \end{prob}
+
+\begin{prob}
+    In this problem we consider the double pendulum on a cart as shown in~\cref{fig:double_pendulum}.
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\textwidth]{figures/double_pendulum.png}
+        \caption{Double pendulum on a cart}
+        \label{fig:double_pendulum}
+    \end{figure}
+    We will consider the system as an input-ouput system with input \( u \) and output \( y \) as described by
+    \begin{align*}
+        \parenth{m_0 + m_1 + m_2} \ddot y - m_1 l_1 \cos \theta_1 \ddot \theta_1 - m_2 l_2 \cos \theta_2 \ddot \theta_2 &+ m_1 l_1 \sin \theta_1 \dot \theta_1^2 + m_2 l_2 \sin \theta_2 \dot \theta_2^2 &= u , \\
+        -m_1 l_1 \cos \theta_1 \ddot y + m_1 l_1^2 \ddot \theta_1 &+ m_1 l_1 g \sin \theta_1 &= 0 , \\
+        - m_2 l_2 \cos \theta_2 \ddot y + m_2 l_2 ^2 \ddot \theta_2 &+ m_2 l_2 g \sin \theta_2 &= 0
+    \end{align*}
+    \begin{subprob}
+    \item For what constant values of \( u \) does the system have equilibrium states?
+    \end{subprob}
+\end{prob}
