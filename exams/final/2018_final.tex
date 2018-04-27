@@ -16,11 +16,11 @@
 \begin{titlepage}
     \centering
     \vspace{1cm}
-    {\Large Spring 2017 MAE3134: Final Exam\par }
+    {\Large Spring 2018 MAE3134: Final Exam\par }
     \vspace{3cm}
-    {11 May 2017\par}
+    {10 May 2018\par}
     \vspace{1cm}
-    \textbf{Resources allowed}: Open notes/book, calculator, ruler. 
+    \textbf{Resources allowed}: 2 sided note sheet, calculator, ruler. 
     No computers or mobile devices.
 
     \vspace{1cm}
@@ -29,11 +29,11 @@
 
     \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
         \hline
-        Prob. 1 & Prob. 2 & Prob. 3 & Prob. 4 & Prob. 5 & Prob. 6 & Prob. 7 & Prob. 8 & Total \\
+        Prob. 1 & Prob. 2 & Prob. 3 & Prob. 4 & Prob. 5 & Total \\
         \hline
-         & & & & & & & &\\[4ex]
+         & & & & &\\[4ex]
         \hline
-        10 & 5 & 20 & 20 & 10 & 5 & 10 & 20 & 100 \\[4ex]
+        20 & 10 & 30 & 30 & 10 & 100 \\[4ex]
         \hline
     \end{tabular}
     \vfill
@@ -172,36 +172,24 @@ with \( \vb{A} \) defined as
     \item Find \( \vb{x}(t) \) for \( \vb{x}(0) = \begin{bmatrix} 1 & 0 & 2 \end{bmatrix} ^T\).
 \end{enumerate}
 \clearpage
+\newpage
+\mbox{}
+\clearpage
 \section{Problem}
 
-For the electrical system in~\cref{fig:elec_circuit_2}:
+Consider the translational mechanical system defined by the following differential equations
+\begin{align*}
+    2 \ddot{x_1} + 10 x_1 - 6 x_2 &= 0 \\
+    -6 x_1 + 5 \ddot{x}_2 + 7 x_2 + 4 x_2 + 4 \dot{x}_2 - 4 \dot{x}_3 &=0 \\
+    -4 \dot{x}_2 + 7 \ddot{x}_3 + 5 \dot{x}_3 &= 0.
+\end{align*}
+
 \begin{enumerate}
-    \item Find the differential equations of motion for the system.
-    \item Find the state space representation of the system with your state vector defined as
-        \begin{align*}
-        \vb{x} = \begin{bmatrix}q_1 & i_1 & q_2 & i_2\end{bmatrix}^T,
-        \end{align*}
-        where \(q_1, i_1\) represent the charge and current in the left loop while \(q_2, i_2\) represent the charge and current in the right loop. 
-        The output is defined as
-        \begin{align*}
-        y = \begin{bmatrix} q_1 & q_2 \end{bmatrix}^T.
-        \end{align*}
+    \item Draw a mechanical model for this system.
+    % \item Replace \( \dot{x}_1 \) with \( i_1 \), \( \dot{x}_2\) with \( i_2 \), and \( \dot{x}_3\) with \( i_3\) where \( i \) represents the current within a loop.
+    %     Draw an equivalent electrical circuit for this system.
 \end{enumerate}
-\begin{figure}[htbp]
-\centering
-\begin{scaletikzpicturetowidth}{0.8\textwidth}
-    \begin{tikzpicture}[scale=\tikzscale]
-        \draw (0,0) to[american voltage source,v<=\( u(t)\)] (0,2) 
-        to[resistor, l^=$R_1$] (2,2) to[capacitor, l=$C$] (2,0) 
-        to[inductor, l^=$L_1$] (0,0); 
-        \draw (2,2) to[short] (4,2)
-        to[inductor, l=$L_2$] (4,0) to[short] (2,0);
-    \end{tikzpicture}
-\end{scaletikzpicturetowidth}
-\caption{Electrical Circuit~\label{fig:elec_circuit_2}}
-\end{figure}
-\clearpage
-\newpage
+\clearpage\newpage
 \mbox{}
 \clearpage
 \includepdf{../../laplace_transform_table.pdf}
