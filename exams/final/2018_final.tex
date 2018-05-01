@@ -161,15 +161,14 @@ Consider a linear system
 with \( \vb{A} \) defined as 
 \begin{align*}
     \vb{A} = \begin{bmatrix}
-        2 & 1 & 4 \\
-        0 & 2 & 0 \\
-        0 & 3 & 1 
+        1 & 1 \\
+        0 & -1
     \end{bmatrix} .
 \end{align*}
 
 \begin{enumerate}
     \item Find the state transition matrix for this system.
-    \item Find \( \vb{x}(t) \) for \( \vb{x}(0) = \begin{bmatrix} 1 & 0 & 2 \end{bmatrix} ^T\).
+    \item Find \( \vb{x}(t) \) for \( \vb{x}(0) = \begin{bmatrix} 1 & 2\end{bmatrix} ^T\).
 \end{enumerate}
 \clearpage
 \newpage
@@ -177,17 +176,16 @@ with \( \vb{A} \) defined as
 \clearpage
 \section{Problem}
 
-Consider the translational mechanical system defined by the following differential equations
+Consider the translational mechanical system defined by the following differential equation
 \begin{align*}
-    2 \ddot{x_1} + 10 x_1 - 6 x_2 &= 0 \\
-    -6 x_1 + 5 \ddot{x}_2 + 7 x_2 + 4 x_2 + 4 \dot{x}_2 - 4 \dot{x}_3 &=0 \\
-    -4 \dot{x}_2 + 7 \ddot{x}_3 + 5 \dot{x}_3 &= 0.
+    \ddot{y} + 3 \dot{y} + 2 y = \dot{u} - u.
 \end{align*}
 
 \begin{enumerate}
-    \item Draw a mechanical model for this system.
-    % \item Replace \( \dot{x}_1 \) with \( i_1 \), \( \dot{x}_2\) with \( i_2 \), and \( \dot{x}_3\) with \( i_3\) where \( i \) represents the current within a loop.
-    %     Draw an equivalent electrical circuit for this system.
+    \item Draw a mechanical model of this system.
+    \item Determine a state space representation for this system.
+    \item Is there a nonzero input \( u \) which does not decay to zero but, for all initial conditions on \( y \) and \( \dot y\), results in an output which decays to zero?
+        If the answer is yes, then give an example of  such an input.
 \end{enumerate}
 \clearpage\newpage
 \mbox{}
